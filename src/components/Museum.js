@@ -25,7 +25,7 @@ export default Museum
 
 const styles = StyleSheet.create({
     container:{
-        marginTop:20,
+        marginTop:5,
         borderWidth:1,
         borderColor:'#DBD7D2',
         borderRadius: 30,

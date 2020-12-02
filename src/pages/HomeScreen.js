@@ -48,7 +48,7 @@ const HomeScreen = () => {
                             <City name="Jakarta Utara" />
                             <City name="Jakarta Pusat" />
                         </ScrollView>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20}}/>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10}}/>
                     <Museum />
                     <Museum />
                     <Museum />
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#A01F1F',
     },
     down:{
-        flex:3,
+        flex:2,
         backgroundColor:'white',
         borderTopRightRadius:20,
         borderTopLeftRadius:20,
@@ -133,12 +133,13 @@ const styles = StyleSheet.create({
         marginBottom:10,
     },
     fontCity:{
-        marginVertical:10,
+        marginVertical:20,
         fontSize:14,
         color:'#A01F1F'
     },
     buttonLihatSemua:{
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        marginBottom: 20
     }
 })
