@@ -1,11 +1,41 @@
-import React from 'react'
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React,{useState} from 'react'
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, Modal, TouchableHighlight } from 'react-native'
 import Museum from '../assets/logo/museumkuy.png'
 
 
 const RegisterScreen = ({navigation}) => {
+    const [modalVisible, setModalVisible] = useState(false);
     return (
+
         <View style={styles.container}>
+            
+            {/*-------- modal ------- */}
+                    <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    }}
+                >
+                    <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Text style={styles.modalText}>Register Success</Text>
+
+                        <TouchableHighlight
+                        style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
+                        onPress={() => {
+                            setModalVisible(!modalVisible);
+                            navigation.navigate('Login');
+                        }}
+                        >
+                        <Text style={styles.textStyle}>OK</Text>
+                        </TouchableHighlight>
+                    </View>
+                    </View>
+                </Modal>
+            {/* ------------ */}
+
             <View style={styles.form}>
                 <View style={styles.up}>
                     <Image source={Museum} style={styles.image} />
@@ -16,7 +46,7 @@ const RegisterScreen = ({navigation}) => {
                     <TextInput placeholder="Password" style={styles.input}/>
                     <TextInput placeholder="Confirm Password" style={styles.input}/>
                     
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
+                    <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
                         <Text style={styles.textButton}>SIGN UP</Text>
                     </TouchableOpacity>
                 </View>
@@ -30,8 +60,16 @@ export default RegisterScreen
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'#A01F1F'
+        backgroundColor:'#A01F1F',
+        justifyContent:'center',
     },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+    
     form:{
         flex:1,
         backgroundColor:'white',
@@ -70,5 +108,37 @@ const styles = StyleSheet.create({
         color:'white',
         fontWeight:'bold',
         fontSize:15
-    }
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        paddingHorizontal: 100,
+        paddingVertical:20,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+      },
+      openButton: {
+        backgroundColor: "#F194FF",
+        borderRadius: 10,
+        paddingHorizontal: 20,
+        paddingVertical:5,
+        elevation: 2
+      },
+      textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
 })
