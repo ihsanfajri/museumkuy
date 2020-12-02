@@ -37,8 +37,8 @@ const HistoryTicketScreen = () => {
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20, width:320}}/>
                 </View>
                 
-                <View style={styles.bottomBottom}>
-                    <ScrollView>
+                <ScrollView>
+                    <View style={styles.bottomBottom}>
                         <TouchableOpacity style={styles.BtnTransaksi}>
                             <TransaksiPending/>
                         </TouchableOpacity>
@@ -51,8 +51,11 @@ const HistoryTicketScreen = () => {
                         <TouchableOpacity style={styles.BtnTransaksi}>
                             <TransaksiPending/>
                         </TouchableOpacity>
-                    </ScrollView>
-                </View>
+                        <TouchableOpacity style={styles.BtnTransaksi}>
+                            <TransaksiPending/>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
             </View>
         </View>
     )

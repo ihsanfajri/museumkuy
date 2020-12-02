@@ -1,14 +1,21 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 const AccountScreen = () => {
     return (
-        <View>
-            <Text>Account</Text>
+        <View style={styles.container}>
+            <ImageBackground>
+                
+            </ImageBackground>
         </View>
     )
 }
 
 export default AccountScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:'white'
+    }
+})
