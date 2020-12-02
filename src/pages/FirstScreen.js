@@ -14,7 +14,7 @@ const FirstScreen = ({ navigation }) => {
                 <TouchableOpacity style={styles.buttonSignup} onPress={() => navigation.navigate('Register')}>
                     <Text style={styles.fontSignup}>SIGN UP</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonSignin} onPress={() => navigation.navigate('Dashboard')}>
+                <TouchableOpacity style={styles.buttonSignin} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.fontSignin}>SIGN IN</Text>
                 </TouchableOpacity>
             </View>
