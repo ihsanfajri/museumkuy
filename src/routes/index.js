@@ -5,10 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../pages/HomeScreen'
 import SplahScreen from '../pages/SpalshScreen'
 import HistoryTickeetScreen from '../pages/HistoryTicketScreen'
-import AccountScreen from '../pages/AccountScreen.js'
+import AccountScreen from '../pages/AccountScreen'
 import FirstScreen from '../pages/FirstScreen'
 import RegisterScreen from '../pages/RegisterScreen'
 import LoginScreen from '../pages/LoginScreen'
+import AllMuseumScreen from '../pages/AllMuseumScreen'
+import UpdateProfileScreen from '../pages/UpdateProfileScreen'
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import iconHome from '../assets/image/home.png'
@@ -69,6 +72,19 @@ const Router = () => {
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
+        <Stack.Screen name="AllMuseum" component={AllMuseumScreen} options={{
+            title: 'Museum',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+        <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{ headerShown: false }}/>
+        
       </Stack.Navigator>
     )
 }

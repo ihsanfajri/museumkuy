@@ -8,7 +8,7 @@ import City from '../components/City'
 import Museum from '../components/Museum'
 import MuseumPopuler from '../components/MuseumPopuler'
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.up}>
@@ -55,7 +55,7 @@ const HomeScreen = () => {
                     <Museum />
                     <Museum />
 
-                    <TouchableOpacity style={styles.buttonLihatSemua}>
+                    <TouchableOpacity style={styles.buttonLihatSemua} onPress={() => navigation.navigate('AllMuseum')}>
                         <ButtonLihatSemua />
                     </TouchableOpacity>
 
