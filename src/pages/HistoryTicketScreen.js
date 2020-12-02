@@ -34,14 +34,11 @@ const HistoryTicketScreen = () => {
                 </View>
 
                 <View style={styles.midBottom}>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20, width:320}}/>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:20, width:320}}/>
                 </View>
                 
-                <ScrollView>
+                <ScrollView style={{marginTop: 15,}}>
                     <View style={styles.bottomBottom}>
-                        <TouchableOpacity style={styles.BtnTransaksi}>
-                            <TransaksiPending/>
-                        </TouchableOpacity>
                         <TouchableOpacity style={styles.BtnTransaksi}>
                             <TransaksiPending/>
                         </TouchableOpacity>
@@ -56,6 +53,7 @@ const HistoryTicketScreen = () => {
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
+                
             </View>
         </View>
     )
@@ -100,7 +98,6 @@ const styles = StyleSheet.create({
     },
 
     bottomBottom:{
-        marginTop: 15,
     }, 
 
     BtnTransaksi:{
