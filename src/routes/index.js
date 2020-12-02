@@ -9,6 +9,8 @@ import AccountScreen from '../pages/AccountScreen.js'
 import FirstScreen from '../pages/FirstScreen'
 import RegisterScreen from '../pages/RegisterScreen'
 import LoginScreen from '../pages/LoginScreen'
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();

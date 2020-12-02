@@ -1,7 +1,12 @@
 import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import Profile from '../assets/image/FotoProfil.png'
 import LogoSearch from '../assets/logo/loupe.png'
+import ButtonLihatSemua from '../components/ButtonLihatSemua'
+import City from '../components/City'
+import Museum from '../components/Museum'
+import MuseumPopuler from '../components/MuseumPopuler'
 
 const HomeScreen = () => {
     return (
@@ -28,6 +33,31 @@ const HomeScreen = () => {
             </View>
             <View style={styles.down}>
                 <ScrollView>
+                    <Text style={styles.fontMostPopuler}>The Most Populer Museum</Text>
+                    <ScrollView horizontal>
+                        <MuseumPopuler />
+                        <MuseumPopuler />
+                        <MuseumPopuler />
+                    </ScrollView>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20}}/>
+                        <Text style={styles.fontCity}>The City of DKI Jakarta</Text>
+                        <ScrollView horizontal>
+                            <City name="Jakarta Barat" />
+                            <City name="Jakarta Timur" />
+                            <City name="Jakarta Selatan" />
+                            <City name="Jakarta Utara" />
+                            <City name="Jakarta Pusat" />
+                        </ScrollView>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20}}/>
+                    <Museum />
+                    <Museum />
+                    <Museum />
+                    <Museum />
+                    <Museum />
+
+                    <TouchableOpacity style={styles.buttonLihatSemua}>
+                        <ButtonLihatSemua />
+                    </TouchableOpacity>
 
                 </ScrollView>
             </View>
@@ -51,6 +81,8 @@ const styles = StyleSheet.create({
         backgroundColor:'white',
         borderTopRightRadius:20,
         borderTopLeftRadius:20,
+        paddingTop:20,
+        paddingHorizontal:20,
     },
     userMessage:{
         flex:1,
@@ -64,7 +96,7 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     searchInput:{
-      marginRight:20  
+      marginRight:20,  
     },
     searchLogo:{
         justifyContent:'center',
@@ -93,5 +125,20 @@ const styles = StyleSheet.create({
         borderRadius:20,
         width:255,
         height:40,
+        paddingLeft: 10
+    },
+    fontMostPopuler:{
+        fontSize:14,
+        color:'#A01F1F',
+        marginBottom:10,
+    },
+    fontCity:{
+        marginVertical:10,
+        fontSize:14,
+        color:'#A01F1F'
+    },
+    buttonLihatSemua:{
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
