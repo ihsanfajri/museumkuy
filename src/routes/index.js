@@ -21,7 +21,7 @@ const Tab = createBottomTabNavigator();
 
 const IconBottom = (props) => {
   const {color, focused} = props.data
-  let colorSelected = focused ? color : '#A01F1F'
+  let colorSelected = focused ? '#A01F1F' : 'grey'
   return(
     <View>
       <Image source={props.image} style={{width: 25, height: 25, tintColor: colorSelected }} />
