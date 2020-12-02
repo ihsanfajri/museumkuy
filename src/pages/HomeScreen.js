@@ -27,7 +27,7 @@ const HomeScreen = () => {
                         <TextInput placeholder="search" style={styles.textInput}/>
                     </View>
                     <View style={styles.searchLogo}>
-                        <Image source={LogoSearch} style={{width:30,height:30}} />
+                        <Image source={LogoSearch} style={{width:30,height:30,}} />
                     </View>
                 </View>
             </View>
@@ -92,23 +92,28 @@ const styles = StyleSheet.create({
     },
     userSearch:{
         flex:1,
+        // backgroundColor: 'grey',
         marginHorizontal: 20,
         flexDirection:'row'
     },
     searchInput:{
-      marginRight:20,  
+      marginRight:10,  
     },
+
     searchLogo:{
-        justifyContent:'center',
-        marginBottom:7
+        marginVertical: 15,
     },
+
     left:{
         flex:3,
         justifyContent:'center'
     },
     right:{
         flex:1,
-        justifyContent:'center'
+        justifyContent:'center',
+        alignItems: 'center',
+        // backgroundColor: 'blue',
+        
     },
     hi:{
         color:'white'
