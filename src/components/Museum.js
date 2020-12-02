@@ -39,8 +39,9 @@ const styles = StyleSheet.create({
     },
     fontContainer:{
         flex:3,
+        // backgroundColor: 'blue',
         marginLeft:20,
-        marginTop:20
+        marginTop:10
     },
     fontMuseum:{
         fontSize:14,
@@ -52,17 +53,22 @@ const styles = StyleSheet.create({
     },
     ratingContainer:{
         flex:1,
+        // backgroundColor: 'blue',
         justifyContent:'center',
         alignItems:'flex-end',
         paddingVertical:20,
-        flexDirection:'row'
+        flexDirection:'row',
+        marginRight: 10,
     },
     ratingImage:{
         width:15,
-        height:16,
+        height:15,
+        // backgroundColor: 'red',
         
     },
     fontRating:{
+        height: 18,
+        // backgroundColor: 'red',
         fontSize:15,
         fontWeight:'bold',
         marginLeft:4,

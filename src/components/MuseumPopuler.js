@@ -16,7 +16,7 @@ const MuseumPopuler = () => {
                     <Text style={styles.fontKota}>Jakarta Barat</Text>
                 </View>
                 <View style={styles.rating}>
-                    <Image source={star} style={{width:15,height:16}} />
+                    <Image source={star} style={{width:15,height:16,}} />
                     <Text style={styles.fontRating}>5.0</Text>
                 </View>
 
@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
     },
     up:{
         flex:1,
+        justifyContent: "center",
+        alignItems: "center",
         padding: 10,
     },
     down:{
@@ -64,11 +66,17 @@ const styles = StyleSheet.create({
     rating:{
         flex:1,
         flexDirection:'row',
-        marginTop:10
+        marginTop:10,
+        alignItems: "center",
+        
     },
     fontRating:{
+        
+        height:18,
+        // backgroundColor: 'red',
         fontSize:15,
         fontWeight:'bold',
         marginLeft:5,
+        marginBottom: 3
     }
 })
