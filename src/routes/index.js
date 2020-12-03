@@ -72,8 +72,9 @@ const Router = () => {
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
-        <Stack.Screen name="AllMuseum" component={AllMuseumScreen} options={{
-            title: 'Museum',
+        <Stack.Screen name="AllMuseum" component={AllMuseumScreen} options={{ 
+            // headerShown: false,
+            title: 'Jakarta Barat',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },

@@ -28,53 +28,48 @@ export default MuseumAll
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        borderWidth:1,
-        borderColor:'#DBD7D2',
-        borderRadius: 30,
-        marginHorizontal:15,
-        marginBottom:20
     },
     up:{
-        flex:1,
         justifyContent: "center",
         alignItems: "center",
         padding: 10,
     },
+
     down:{
         flex:1,
-        flexDirection:'row'
+        flexDirection:'row',
     },
+
     image:{
-        width:370,
-        height:120,
+        width:302,
+        height:127,
         borderRadius:20
     },
     text:{
-        flex: 3, 
         paddingLeft:20,
         paddingBottom:20,
     },
-    fontMuseum:{
-        fontWeight:'bold',
-        fontSize:14
-    },
+    // fontMuseum:{
+    //     fontWeight:'bold',
+    //     fontSize:14
+    // },
     fontKota:{
         fontSize:10,
         color:'#C4C4C4'
     },
-    rating:{
-        flex:1,
-        flexDirection:'row',
-        marginTop:10,
-        alignItems: "center",
+    // rating:{
+    //     flex:1,
+    //     flexDirection:'row',
+    //     marginTop:10,
+    //     alignItems: "center",
         
-    },
-    fontRating:{
+    // },
+    // fontRating:{
         
-        height:18,
-        fontSize:15,
-        fontWeight:'bold',
-        marginLeft:5,
-        marginBottom: 3
-    }
+    //     height:18,
+    //     fontSize:15,
+    //     fontWeight:'bold',
+    //     marginLeft:5,
+    //     marginBottom: 3
+    // }
 })

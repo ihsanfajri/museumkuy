@@ -10,12 +10,19 @@ const AllMuseumScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.up}>
+                {/* <View style={styles.containerTitle}>
+                    <Text style={styles.Title}>
+                        Jakarta Barat
+                    </Text>
+                </View> */}
                 <View style={styles.userSearch}>
                     <View style={styles.searchInput}>
                         <TextInput placeholder="search" style={styles.textInput}/>
                     </View>
                     <View style={styles.searchLogo}>
-                        <Image source={LogoSearch} style={{width:30,height:30,}} />
+                        <TouchableOpacity>
+                            <Image source={LogoSearch} style={{width:25,height:25,}} />
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -23,22 +30,22 @@ const AllMuseumScreen = () => {
             animation="fadeInUpBig"
             style={styles.down}>
                 <ScrollView style={styles.contenContainer}>
-                    <TouchableOpacity Style={styles.btnMuseum}>
+                    <TouchableOpacity style={styles.btn}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity Style={styles.btnMuseum}>
+                    <TouchableOpacity style={styles.btn}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity Style={styles.btnMuseum}>
+                    <TouchableOpacity style={styles.btn}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity Style={styles.btnMuseum} >
+                    <TouchableOpacity style={styles.btn}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity Style={styles.btnMuseum}>
+                    <TouchableOpacity style={styles.btn}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity Style={styles.btnMuseum}>
+                    <TouchableOpacity style={styles.btn}>
                         <MuseumAll />
                     </TouchableOpacity>
                 </ScrollView>
@@ -56,41 +63,64 @@ const styles = StyleSheet.create({
     },
     up:{
         flex:1,
-        marginTop:10
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     down:{
-        flex:5,
+        flex: 5,
         backgroundColor:'white',
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
         paddingTop:10,
-    },
+        alignItems: "center" ,   },
 
     userSearch:{
         flex:1,
-        marginHorizontal: 20,
-        flexDirection:'row'
-    },
-    searchInput:{
-      marginRight:10,  
+        flexDirection:'row',
+        justifyContent: "center",
+        alignItems: 'center',
+        // backgroundColor: 'green',
     },
 
-    searchLogo:{
-        marginVertical: 15,
+    searchInput:{
+        marginRight:10,  
     },
+    
     textInput:{
-        marginTop:10,
         borderWidth: 1,
         backgroundColor:'white',
         borderColor:'#DBD7D2',
         borderRadius:20,
-        width:300,
-        height:40,
-        paddingLeft: 10
+        width:250,
+        height:35,
+        paddingLeft: 10,
+        fontSize: 12,
     },
 
-    btnMuseum:{
+    btn:{
         borderWidth: 1,
+        borderRadius: 30,
+        height: 200,
+        width: 315,
+        borderColor: '#C4C4C4',
+        marginTop: 10,
+    },
+    
+    contenContainer:{
+        marginTop: 5,
+    },
 
+    containerTitle:{
+        marginTop: 5,
+        marginBottom: 5,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    Title:{
+        color:'white',
+        fontSize: 18,
+        fontWeight:'bold'
     }
+
 })
