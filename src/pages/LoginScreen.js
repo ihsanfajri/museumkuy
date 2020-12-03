@@ -4,56 +4,64 @@ import Museum from '../assets/logo/museumkuy.png'
 
 const LoginScreen = ({navigation}) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.form}>
-                <ScrollView>
-                <View style={styles.up}>
-                    <Image source={Museum} style={styles.image} />
-                </View>
-                <View style={styles.down}>
-                   
-                    <TextInput placeholder="Email" style={styles.input}/>
-                    <TextInput placeholder="Password" style={styles.input}/>
+        <ScrollView style={styles.scroll}>
+            <View style={styles.container}>
+                <View style={styles.form}>
+                    <View style={styles.up}>
+                        <Image source={Museum} style={styles.image} />
+                    </View>
+                    <View style={styles.down}>
                     
-                    
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dashboard')}>
-                        <Text style={styles.textButton}>SIGN IN</Text>
-                    </TouchableOpacity>
-
-                    <View style={styles.Signup}>
-                        <Text style={styles.textDont}>DONT HAVE AN ACCOUNT ? </Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                            <Text style={styles.textSignup}>SIGN UP</Text>
+                        <TextInput placeholder="Email" style={styles.input}/>
+                        <TextInput placeholder="Password" style={styles.input}/>
+                        
+                        
+                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dashboard')}>
+                            <Text style={styles.textButton}>SIGN IN</Text>
                         </TouchableOpacity>
+
+                        <View style={styles.Signup}>
+                            <Text style={styles.textDont}>DONT HAVE AN ACCOUNT ? </Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+                                <Text style={styles.textSignup}>SIGN UP</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
-                </ScrollView>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
 export default LoginScreen
 
 const styles = StyleSheet.create({
+
+    scroll:{
+        flex: 1,
+        backgroundColor: '#A01F1F',
+    }, 
     container:{
-        flex:1,
-        backgroundColor:'#A01F1F'
+        height: '100%',
+        justifyContent: "center",
+        alignItems: "center",
     },
+
     form:{
-        flex:1,
+        flex:1, 
         backgroundColor:'white',
         marginHorizontal:30,
         marginVertical:50,
-        borderRadius:20
+        borderRadius:30,
+        height: 500,
+        width: 300,
     },
     up:{
-        flex:1,
+        // backgroundColor: 'green',
         alignItems:'center',
         justifyContent:'center'
     },
     down:{
-        flex:1,
         marginHorizontal:20
     },
     image:{
@@ -66,7 +74,8 @@ const styles = StyleSheet.create({
         borderColor:'#DBD7D2',
         borderRadius:5,
         paddingLeft:20,
-        marginBottom:40
+        marginBottom:40, 
+        borderRadius: 30,
     },
     button:{
         backgroundColor:'#A01F1F',
@@ -81,7 +90,6 @@ const styles = StyleSheet.create({
         fontSize:15
     },
     Signup:{
-        flex:1,
         flexDirection:'row',
         justifyContent:'center',
         marginTop:20

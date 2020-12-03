@@ -6,57 +6,57 @@ import Museum from '../assets/logo/museumkuy.png'
 const RegisterScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
-
-       
-     
-        <View style={styles.container}>
+        <ScrollView style={styles.scroll}>
+            <View style={styles.container}>
             
-            {/*-------- modal ------- */}
+                    {/*-------- modal ------- */}
                     <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalVisible}
-                    onRequestClose={() => {
-                    Alert.alert("Modal has been closed.");
-                    }}
-                >
-                    <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Register Success</Text>
-
-                        <TouchableHighlight
-                        style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
-                        onPress={() => {
-                            setModalVisible(!modalVisible);
-                            navigation.navigate('Login');
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={() => {
+                        Alert.alert("Modal has been closed.");
                         }}
-                        >
-                        <Text style={styles.textStyle}>OK</Text>
-                        </TouchableHighlight>
-                    </View>
-                    </View>
-                </Modal>
-            {/* ------------ */}
+                    >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <Text style={styles.modalText}>Register Success</Text>
 
-            
-                <View style={styles.form}>
-                    <ScrollView style={styles.scrollView}>  
-                    <View style={styles.up}>
-                        <Image source={Museum} style={styles.image} />
+                            <TouchableHighlight
+                                style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
+                                onPress={() => {
+                                    setModalVisible(!modalVisible);
+                                    navigation.navigate('Login');
+                                }}
+                                >
+                                <Text style={styles.textStyle}>OK</Text>
+                            </TouchableHighlight>
+                        </View>
                     </View>
-                    <View style={styles.down}>
-                        <TextInput placeholder="Full name" style={styles.input} />
-                        <TextInput placeholder="Email" style={styles.input}/>
-                        <TextInput placeholder="Password" style={styles.input}/>
-                        <TextInput placeholder="Confirm Password" style={styles.input}/>
-                        
-                        <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
-                            <Text style={styles.textButton}>SIGN UP</Text>
-                        </TouchableOpacity>
+                    </Modal>
+                    {/* ------------ */}
+
+                
+                    <View style={styles.form}>
+                        {/* <ScrollView style={styles.scrollView}>   */}
+                            <View style={styles.up}>
+                                <Image source={Museum} style={styles.image} />
+                            </View>
+                            <View style={styles.down}>
+                                <TextInput placeholder="Full name" style={styles.input} />
+                                <TextInput placeholder="Email" style={styles.input}/>
+                                <TextInput placeholder="Password" style={styles.input}/>
+                                <TextInput placeholder="Confirm Password" style={styles.input}/>
+                                
+                                <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
+                                    <Text style={styles.textButton}>SIGN UP</Text>
+                                </TouchableOpacity>
+                            </View>
+                        {/* </ScrollView> */}
                     </View>
-                    </ScrollView>
-                </View>
-        </View>
+            </View>
+        </ScrollView>
+        
 
     
    
@@ -68,9 +68,9 @@ export default RegisterScreen
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
         backgroundColor:'#A01F1F',
         justifyContent:'center',
+        alignItems: 'center',
     },
     centeredView: {
         flex: 1,
@@ -80,31 +80,36 @@ const styles = StyleSheet.create({
     },
     
     form:{
-        flex:1,
+        flex: 1,
         backgroundColor:'white',
         marginHorizontal:30,
         marginVertical:50,
-        borderRadius:20
+        borderRadius:30,
+        width: 300,
+        height: 500,
+        justifyContent:'center',
+        alignContent: 'center',
     },
     up:{
-        flex:1,
+        // backgroundColor: 'green',
         alignItems:'center',
         justifyContent:'center'
     },
     down:{
-        flex:3,
+        // backgroundColor:'blue',
         marginHorizontal:20
     },
     image:{
-        width:116,
-        height:100
+        width:150,
+        height:120,
     },
     input:{
         borderWidth:1,
         borderColor:'#DBD7D2',
         borderRadius:5,
         paddingLeft:20,
-        marginBottom:20
+        marginBottom:20,
+        borderRadius: 30,
     },
     button:{
         backgroundColor:'#A01F1F',
@@ -129,18 +134,18 @@ const styles = StyleSheet.create({
         shadowOffset: {
           width: 0,
           height: 2
-        },
+    },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5
-      },
-      openButton: {
+    },
+    openButton: {
         backgroundColor: "#F194FF",
         borderRadius: 10,
         paddingHorizontal: 20,
         paddingVertical:5,
         elevation: 2
-      },
+    },
       textStyle: {
         color: "white",
         fontWeight: "bold",
@@ -149,5 +154,10 @@ const styles = StyleSheet.create({
       modalText: {
         marginBottom: 15,
         textAlign: "center"
+      },
+
+      scroll:{
+        flex: 1,
+        backgroundColor: '#A01F1F',
       }
 })
