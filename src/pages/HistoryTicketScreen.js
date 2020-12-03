@@ -6,16 +6,21 @@ import TransaksiPending from '../components/TransaksiPending'
 
 import gambarTransaksi from '../assets/image/MenuTransaksi.png'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import * as Animatable from 'react-native-animatable'
 
 
 const HistoryTicketScreen = () => {
     return (
         <View style={styles.container}>
-            <View style={styles.containerTop}>
+            <Animatable.View 
+            animation="fadeInDownBig"
+            style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
                 <Text style={styles.title}> History Transaksi </Text>
-            </View>
-            <View style={styles.containerBottom}>
+            </Animatable.View>
+            <Animatable.View 
+            animation="fadeInUpBig"
+            style={styles.containerBottom}>
                 <View style={styles.bottomTop}>
                     <ScrollView horizontal >
                         <TouchableOpacity>
@@ -54,7 +59,7 @@ const HistoryTicketScreen = () => {
                     </View>
                 </ScrollView>
                 
-            </View>
+            </Animatable.View>
         </View>
     )
 }

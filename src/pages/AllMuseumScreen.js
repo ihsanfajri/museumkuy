@@ -4,6 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import LogoSearch from '../assets/logo/loupe.png'
 import Museum from '../components/Museum'
 import MuseumAll from '../components/MuseumAll'
+import * as Animatable from 'react-native-animatable'
 
 const AllMuseumScreen = () => {
     return (
@@ -18,7 +19,9 @@ const AllMuseumScreen = () => {
                     </View>
                 </View>
             </View>
-            <View style={styles.down}>
+            <Animatable.View 
+            animation="fadeInUpBig"
+            style={styles.down}>
                 <ScrollView style={styles.contenContainer}>
                     <TouchableOpacity Style={styles.btnMuseum}>
                         <MuseumAll />
@@ -39,7 +42,7 @@ const AllMuseumScreen = () => {
                         <MuseumAll />
                     </TouchableOpacity>
                 </ScrollView>
-            </View>
+            </Animatable.View>
         </View>
     )
 }

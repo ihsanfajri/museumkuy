@@ -6,6 +6,7 @@ import IconAccount from '../components/IconAccount'
 import editIcon from '../assets/logo/edit.png'
 import logoutIcon from '../assets/logo/logout.png'
 import passwordIcon from '../assets/logo/password.png'
+import * as Animatable from 'react-native-animatable'
 
 const AccountScreen = ({navigation}) => {
     return (
@@ -13,14 +14,14 @@ const AccountScreen = ({navigation}) => {
             <ImageBackground source={fotoProfile} style={styles.imageBackground}>
                 
             </ImageBackground>
-            <View style={styles.dataProfile}>
+            <View  style={styles.dataProfile}>
                 <View style={styles.fontContainer}>
                     <Text style={styles.fontName}>Maria</Text>
                     <Text style={styles.fontName}>Vania</Text>
                     <Text style={styles.fontEmail}>Mariauwuw@gmail.com</Text>
                 </View>
-                <View style={styles.iconContainer}>
-                    <TouchableOpacity>
+                <Animatable.View animation="wobble" style={styles.iconContainer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')}>
                         <IconAccount name="Edit Profile" image={editIcon} />
                     </TouchableOpacity>
                     <TouchableOpacity>
@@ -29,7 +30,7 @@ const AccountScreen = ({navigation}) => {
                     <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                         <IconAccount name="Logout" image={logoutIcon} />
                     </TouchableOpacity>
-                </View>
+                </Animatable.View>
                     
             </View>
             
