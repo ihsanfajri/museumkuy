@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, Modal, TouchableHighlight } from 'react-native'
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, Modal, TouchableHighlight, ScrollView } from 'react-native'
 import Museum from '../assets/logo/museumkuy.png'
 
 
@@ -7,6 +7,8 @@ const RegisterScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
 
+       
+     
         <View style={styles.container}>
             
             {/*-------- modal ------- */}
@@ -36,22 +38,29 @@ const RegisterScreen = ({navigation}) => {
                 </Modal>
             {/* ------------ */}
 
-            <View style={styles.form}>
-                <View style={styles.up}>
-                    <Image source={Museum} style={styles.image} />
+            
+                <View style={styles.form}>
+                    <ScrollView style={styles.scrollView}>  
+                    <View style={styles.up}>
+                        <Image source={Museum} style={styles.image} />
+                    </View>
+                    <View style={styles.down}>
+                        <TextInput placeholder="Full name" style={styles.input} />
+                        <TextInput placeholder="Email" style={styles.input}/>
+                        <TextInput placeholder="Password" style={styles.input}/>
+                        <TextInput placeholder="Confirm Password" style={styles.input}/>
+                        
+                        <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
+                            <Text style={styles.textButton}>SIGN UP</Text>
+                        </TouchableOpacity>
+                    </View>
+                    </ScrollView>
                 </View>
-                <View style={styles.down}>
-                    <TextInput placeholder="Full name" style={styles.input} />
-                    <TextInput placeholder="Email" style={styles.input}/>
-                    <TextInput placeholder="Password" style={styles.input}/>
-                    <TextInput placeholder="Confirm Password" style={styles.input}/>
-                    
-                    <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
-                        <Text style={styles.textButton}>SIGN UP</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
         </View>
+
+    
+   
+    
     )
 }
 

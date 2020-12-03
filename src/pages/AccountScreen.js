@@ -20,7 +20,7 @@ const AccountScreen = ({navigation}) => {
                     <Text style={styles.fontName}>Vania</Text>
                     <Text style={styles.fontEmail}>Mariauwuw@gmail.com</Text>
                 </View>
-                <Animatable.View animation="wobble" style={styles.iconContainer}>
+                <View style={styles.iconContainer}>
                     <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')}>
                         <IconAccount name="Edit Profile" image={editIcon} />
                     </TouchableOpacity>
@@ -30,7 +30,7 @@ const AccountScreen = ({navigation}) => {
                     <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                         <IconAccount name="Logout" image={logoutIcon} />
                     </TouchableOpacity>
-                </Animatable.View>
+                </View>
                     
             </View>
             

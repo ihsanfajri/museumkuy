@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import Museum from '../assets/logo/museumkuy.png'
 
 const LoginScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.form}>
+                <ScrollView>
                 <View style={styles.up}>
                     <Image source={Museum} style={styles.image} />
                 </View>
@@ -26,6 +27,7 @@ const LoginScreen = ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                 </View>
+                </ScrollView>
             </View>
         </View>
     )
