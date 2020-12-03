@@ -58,21 +58,22 @@ const styles = StyleSheet.create({
     },
     image:{
         width:160,
-        height:150
+        height:150,
+        marginBottom:30
     },
     input:{
         borderWidth:1,
         borderColor:'#DBD7D2',
         borderRadius:5,
         paddingLeft:20,
-        marginBottom:20
+        marginBottom:40
     },
     button:{
         backgroundColor:'#A01F1F',
         borderRadius:20,
         padding:10,
         alignItems:'center',
-        marginTop:20
+        marginTop:30
     },
     textButton:{
         color:'white',
