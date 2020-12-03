@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable'
 
 const AccountScreen = ({navigation}) => {
     return (
-        <View style={styles.container}>
+        <Animatable.View animation="fadeIn" style={styles.container}>
             <ImageBackground source={fotoProfile} style={styles.imageBackground}>
                 
             </ImageBackground>
@@ -34,7 +34,7 @@ const AccountScreen = ({navigation}) => {
                     
             </View>
             
-        </View>
+        </Animatable.View>
     )
 }
 
