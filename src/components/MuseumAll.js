@@ -49,27 +49,27 @@ const styles = StyleSheet.create({
         paddingLeft:20,
         paddingBottom:20,
     },
-    // fontMuseum:{
-    //     fontWeight:'bold',
-    //     fontSize:14
-    // },
+    fontMuseum:{
+        fontWeight:'bold',
+        fontSize:14
+    },
     fontKota:{
         fontSize:10,
         color:'#C4C4C4'
     },
-    // rating:{
-    //     flex:1,
-    //     flexDirection:'row',
-    //     marginTop:10,
-    //     alignItems: "center",
+    rating:{
+        flex:1,
+        flexDirection:'row',
+        marginTop:10,
+        alignItems: "center",
         
-    // },
-    // fontRating:{
+    },
+    fontRating:{
         
-    //     height:18,
-    //     fontSize:15,
-    //     fontWeight:'bold',
-    //     marginLeft:5,
-    //     marginBottom: 3
-    // }
+        height:18,
+        fontSize:15,
+        fontWeight:'bold',
+        marginLeft:5,
+        marginBottom: 3
+    }
 })
