@@ -11,6 +11,7 @@ import RegisterScreen from '../pages/RegisterScreen'
 import LoginScreen from '../pages/LoginScreen'
 import AllMuseumScreen from '../pages/AllMuseumScreen'
 import UpdateProfileScreen from '../pages/UpdateProfileScreen'
+import TransaksiPendingScreen from '../pages/TransaksiPendingScreen'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -84,7 +85,18 @@ const Router = () => {
             },
           }}/>
 
-        <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{
+        <Stack.Screen name="TransaksiPending" component={TransaksiPendingScreen} options={{
+            title: 'Transaksi Pending',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+          <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{
             title: 'Update Profile',
             headerStyle: {
               backgroundColor: '#A01F1F',

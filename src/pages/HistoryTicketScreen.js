@@ -9,7 +9,7 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import * as Animatable from 'react-native-animatable'
 
 
-const HistoryTicketScreen = () => {
+const HistoryTicketScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Animatable.View 
@@ -44,7 +44,7 @@ const HistoryTicketScreen = () => {
                 
                 <ScrollView style={{marginTop: 15,}}>
                     <View style={styles.bottomBottom}>
-                        <TouchableOpacity style={styles.BtnTransaksi}>
+                        <TouchableOpacity style={styles.BtnTransaksi} onPress={ () => navigation.navigate(TransaksiPending)}>
                             <TransaksiPending/>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.BtnTransaksi}>
