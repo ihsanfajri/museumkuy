@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import * as Animatable from 'react-native-animatable'
 import Profile from '../assets/image/FotoProfil.png'
 import LogoSearch from '../assets/logo/loupe.png'
 import ButtonLihatSemua from '../components/ButtonLihatSemua'
@@ -11,7 +12,9 @@ import MuseumPopuler from '../components/MuseumPopuler'
 const HomeScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <View style={styles.up}>
+            <Animatable.View 
+            animation="fadeInDownBig"
+            style={styles.up}>
                 <View style={styles.userMessage}>
                     <View style={styles.left}>
                         <Text style={styles.hi}>Hi, User</Text>
@@ -30,8 +33,10 @@ const HomeScreen = ({navigation}) => {
                         <Image source={LogoSearch} style={{width:30,height:30,}} />
                     </View>
                 </View>
-            </View>
-            <View style={styles.down}>
+            </Animatable.View>
+            <Animatable.View
+             animation="fadeInUpBig"
+             style={styles.down}>
                 <ScrollView>
                     <Text style={styles.fontMostPopuler}>The Most Populer Museum</Text>
                     <ScrollView horizontal>
@@ -60,7 +65,7 @@ const HomeScreen = ({navigation}) => {
                     </TouchableOpacity>
 
                 </ScrollView>
-            </View>
+            </Animatable.View>
         </View>
     )
 }

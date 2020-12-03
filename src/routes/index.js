@@ -83,7 +83,16 @@ const Router = () => {
             },
           }}/>
 
-        <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{
+            title: 'Update Profile',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
         
       </Stack.Navigator>
     )

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput,Image, ScrollView } from 'react-nativ
 import LogoSearch from '../assets/logo/loupe.png'
 import Museum from '../components/Museum'
 import MuseumAll from '../components/MuseumAll'
+import * as Animatable from 'react-native-animatable'
 
 const AllMuseumScreen = () => {
     return (
@@ -17,7 +18,9 @@ const AllMuseumScreen = () => {
                     </View>
                 </View>
             </View>
-            <View style={styles.down}>
+            <Animatable.View 
+            animation="fadeInUpBig"
+            style={styles.down}>
                 <ScrollView style={styles.contenContainer}>
                     <MuseumAll />
                     <MuseumAll />
@@ -25,7 +28,7 @@ const AllMuseumScreen = () => {
                     <MuseumAll />
                     <MuseumAll />
                 </ScrollView>
-            </View>
+            </Animatable.View>
         </View>
     )
 }

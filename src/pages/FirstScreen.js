@@ -1,15 +1,21 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Travel from '../assets/image/travel.png'
+import * as Animatable from 'react-native-animatable'
 
 
 const FirstScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.up}>
-                <Image source={Travel} style={styles.image} />
+                <Animatable.Image 
+                animation="bounceIn"
+                duration={1500}
+                source={Travel} style={styles.image} />
             </View>
-            <View style={styles.down}>
+            <Animatable.View 
+            animation="fadeInUpBig"
+            style={styles.down}>
                 <Text style={styles.moto}>Grow your knowledge</Text>
                 <TouchableOpacity style={styles.buttonSignup} onPress={() => navigation.navigate('Register')}>
                     <Text style={styles.fontSignup}>SIGN UP</Text>
@@ -17,7 +23,7 @@ const FirstScreen = ({ navigation }) => {
                 <TouchableOpacity style={styles.buttonSignin} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.fontSignin}>SIGN IN</Text>
                 </TouchableOpacity>
-            </View>
+            </Animatable.View>
         </View>
     )
 }
