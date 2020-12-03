@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput,Image, ScrollView } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import LogoSearch from '../assets/logo/loupe.png'
 import Museum from '../components/Museum'
 import MuseumAll from '../components/MuseumAll'
@@ -19,11 +20,24 @@ const AllMuseumScreen = () => {
             </View>
             <View style={styles.down}>
                 <ScrollView style={styles.contenContainer}>
-                    <MuseumAll />
-                    <MuseumAll />
-                    <MuseumAll />
-                    <MuseumAll />
-                    <MuseumAll />
+                    <TouchableOpacity Style={styles.btnMuseum}>
+                        <MuseumAll />
+                    </TouchableOpacity>
+                    <TouchableOpacity Style={styles.btnMuseum}>
+                        <MuseumAll />
+                    </TouchableOpacity>
+                    <TouchableOpacity Style={styles.btnMuseum}>
+                        <MuseumAll />
+                    </TouchableOpacity>
+                    <TouchableOpacity Style={styles.btnMuseum} >
+                        <MuseumAll />
+                    </TouchableOpacity>
+                    <TouchableOpacity Style={styles.btnMuseum}>
+                        <MuseumAll />
+                    </TouchableOpacity>
+                    <TouchableOpacity Style={styles.btnMuseum}>
+                        <MuseumAll />
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
         </View>
@@ -71,4 +85,9 @@ const styles = StyleSheet.create({
         height:40,
         paddingLeft: 10
     },
+
+    btnMuseum:{
+        borderWidth: 1,
+
+    }
 })

@@ -8,7 +8,6 @@ const MuseumAll = () => {
         <View style={styles.container}>
             <View style={styles.up}>
                 <Image source={museum} style={styles.image} />
-
             </View>
             <View style={styles.down}>
                 <View style={styles.text}>
@@ -19,7 +18,6 @@ const MuseumAll = () => {
                     <Image source={star} style={{width:15,height:16,}} />
                     <Text style={styles.fontRating}>5.0</Text>
                 </View> */}
-
             </View>
         </View>
     )
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
         borderRadius:20
     },
     text:{
-        flex:3,
+        flex: 3, 
         paddingLeft:20,
         paddingBottom:20,
     },
