@@ -17,7 +17,7 @@ import ChangePasswordScreen from '../pages/ChangePasswordScreen'
 import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
 import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 
-
+import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
 
 
@@ -166,6 +166,9 @@ const Router = () => {
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
       
         <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
+        
+        <Stack.Screen name="GaleriMuseum" component={GaleriMuseumScreen} options={{ headerShown: false }}/>
+      
       </Stack.Navigator>
     )
 }

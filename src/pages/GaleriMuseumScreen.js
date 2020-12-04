@@ -11,8 +11,9 @@ import star from '../assets/image/star.png'
 import gallery from '../assets/image/gallery.png'
 import location from '../assets/image/placeholder.png'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import Galerifoto from '../components/Galerifoto';
 
-const DescriptionMuseumScreen = ({navigation}) => {
+const GaleriMuseumScreen = () => {
     return (
         <View style={styles.container}>
             <Image source={museum} style={styles.fotoMuseum} />
@@ -29,7 +30,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
                         </View>
                         <Text style={styles.titleBtn}>Deskripsi</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('GaleriMuseum')}>
+                    <TouchableOpacity style={styles.btn}>
                         <View style={styles.lingkaran}>
                             <Image source={gallery} style={styles.imagegallery} />
                         </View>
@@ -58,7 +59,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
                 </View>
                 <ScrollView style={styles.scroll}>
                     <View style={styles.isiContent}>
-                        <ContentDesc />
+                        <Galerifoto />
                     </View>
                 </ScrollView>
             </View>
@@ -77,7 +78,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
     )
 }
 
-export default DescriptionMuseumScreen
+export default GaleriMuseumScreen
 
 const styles = StyleSheet.create({
     container:{
@@ -171,7 +172,6 @@ const styles = StyleSheet.create({
     isiContent:{
         height: '100%',
         width: '85%',
-        alignItems: "center",
         marginLeft: 30,
     },
 
