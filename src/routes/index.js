@@ -13,6 +13,7 @@ import AllMuseumScreen from '../pages/AllMuseumScreen'
 import UpdateProfileScreen from '../pages/UpdateProfileScreen'
 import TransaksiPendingScreen from '../pages/TransaksiPendingScreen'
 import ChangePasswordScreen from '../pages/ChangePasswordScreen'
+import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -118,7 +119,7 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
-        
+          <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     )
 }

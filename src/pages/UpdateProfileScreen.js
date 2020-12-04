@@ -7,112 +7,111 @@ import * as Animatable from 'react-native-animatable'
 const UpdateProfileScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
-
-       <ScrollView style={styles.scroll}> 
         <View style={styles.container}>
             {/*-------- modal ------- */}
             <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalVisible}
-                    onRequestClose={() => {
-                    Alert.alert("Modal has been closed.");
-                    }}
-                >
-                    <View style={styles.centeredView}>
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                Alert.alert("Modal has been closed.");
+                }}
+            >
+                <View style={styles.centeredView}>
                     <View style={styles.modalView}>
                         <Text style={styles.modalText}>Update Profile Success</Text>
 
                         <TouchableHighlight
-                        style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
-                        onPress={() => {
-                            setModalVisible(!modalVisible);
-                            navigation.navigate('Account');
-                        }}
+                            style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                                navigation.navigate('Account');
+                            }}
                         >
                         <Text style={styles.textStyle}>OK</Text>
                         </TouchableHighlight>
                     </View>
-                    </View>
-                </Modal>
-            {/* ------------ */}
-
-
-
-            <View style={styles.up}>
-               <Image source={logoEdit} style={styles.image} /> 
-            </View>
-            <Animatable.View animation="fadeInUpBig" style={styles.down}>
-                <TextInput placeholder="Name" style={styles.textInput} />
-                <TextInput placeholder="Email" style={styles.textInput} />
-                <View style={styles.fotoContainer}>
-                    <TextInput placeholder="Photo" style={styles.textInput} />
-                    <TouchableOpacity style={styles.buttonUpload}>
-                        <Text style={styles.fontButton}>Choose</Text>
-                    </TouchableOpacity>
                 </View>
-                <View style={styles.updateContainer}>
-                    <TouchableOpacity style={styles.buttonUpdate} onPress={() => setModalVisible(true)}>
-                        <Text style={styles.fontUpdate}>Update</Text>
-                    </TouchableOpacity>
+            </Modal>
+            {/* ------------ */}
+            <View style={styles.up}>
+                <Image source={logoEdit} style={styles.image} /> 
+            </View>
+
+            <Animatable.View animation="fadeInUpBig" style={styles.containerBottom} >
+                <View style={styles.down}>
+                    <View style={styles.containerInput}>
+                        <TextInput placeholder="Name" style={styles.textInput} />
+                        <TextInput placeholder="Email" style={styles.textInput} />
+                        <View style={styles.fotoContainer}>
+                            <TextInput placeholder="Photo" style={styles.textInput} />
+                            <TouchableOpacity style={styles.buttonUpload}>
+                                <Text style={styles.fontButton}>Choose</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                   
+                    <View style={styles.updateContainer}>
+                        <TouchableOpacity style={styles.buttonUpdate} onPress={() => setModalVisible(true)}>
+                            <Text style={styles.fontUpdate}>Update</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </Animatable.View>
         </View>
-    </ScrollView>
+                
     )
 }
 
 export default UpdateProfileScreen
 
 const styles = StyleSheet.create({
-    scroll:{
-        flex:1,
-        backgroundColor:'white'
-
-    },
     container:{
         flex:1,
-        backgroundColor:'#A01F1F'
-    },
-    up:{
-        flex:1,
         backgroundColor:'#A01F1F',
+    },
+
+    up:{
+        flex: 1,
+        height: '100%',
+        // backgroundColor: 'blue',
         alignItems:'center',
         justifyContent:'center'
     },
+
     down:{
-        marginTop:10,
-        flex:2,
+        flex: 1,
         backgroundColor:'white',
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
-        paddingTop:30,
-        paddingHorizontal:30
+        paddingHorizontal:30,
     },
     textInput:{
         borderWidth:1,
         borderColor:'#DBD7D2',
         borderRadius:10,
-        marginTop:20
+        marginTop:20, 
+        width: 275,
+        height: 40,
     },
     buttonUpload:{
         position:'absolute',
-        top:30,
+        top:25,
         right:17,
         backgroundColor:'#A01F1F',
         paddingVertical:5,
         paddingHorizontal:10,
-        borderRadius:40
+        borderRadius:40,
+       
     },
     fontButton:{
         fontWeight:'bold',
         color:'white'
     },
     updateContainer:{
-        flex:1,
         flexDirection:'row',
         justifyContent:'flex-end',
-        alignItems:'center'
+        alignItems:'center',
     },
     buttonUpdate:{
         backgroundColor:'#A01F1F',
@@ -133,7 +132,6 @@ const styles = StyleSheet.create({
         borderRadius:40
     },
     centeredView: {
-        flex: 1,
         justifyContent: "center",
         alignItems: "center",
         marginTop: 22
@@ -154,6 +152,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5
       },
+
       openButton: {
         backgroundColor: "#F194FF",
         borderRadius: 10,
@@ -161,13 +160,27 @@ const styles = StyleSheet.create({
         paddingVertical:5,
         elevation: 2
       },
+
       textStyle: {
         color: "white",
         fontWeight: "bold",
         textAlign: "center"
       },
+
       modalText: {
         marginBottom: 15,
         textAlign: "center"
+      },
+
+      containerBottom:{
+          flex: 2,
+        //   backgroundColor: 'green',
+          height: '100%',
+      }, 
+
+      containerInput: {
+          alignItems: "center",
+          
       }
+
 })

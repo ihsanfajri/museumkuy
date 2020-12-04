@@ -54,11 +54,23 @@ const HomeScreen = ({navigation}) => {
                             <City name="Jakarta Pusat" />
                         </ScrollView>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10}}/>
-                    <Museum />
-                    <Museum />
-                    <Museum />
-                    <Museum />
-                    <Museum />
+                    <View>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                            <Museum />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                            <Museum />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                            <Museum />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                            <Museum />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                            <Museum />
+                        </TouchableOpacity>
+                    </View>
 
                     <TouchableOpacity style={styles.buttonLihatSemua} onPress={() => navigation.navigate('AllMuseum')}>
                         <ButtonLihatSemua />
