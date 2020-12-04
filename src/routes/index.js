@@ -165,7 +165,7 @@ const Router = () => {
         <Stack.Screen name="HistorySuccess" component={HistoryTicketSuccessScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
       
-          <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     )
 }

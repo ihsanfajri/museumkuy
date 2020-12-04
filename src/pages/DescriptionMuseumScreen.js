@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, View, Text } from 'react-native'
+import { Image, StyleSheet, View, Text, TouchableOpacityComponent } from 'react-native'
 import { useScrollToTop } from '@react-navigation/native';
 
 import TitleMuseum from '../components/TitleMuseum'
@@ -14,57 +14,65 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 const DescriptionMuseumScreen = () => {
     return (
-            <View style={styles.container}>
-                <Image source={museum} style={styles.fotoMuseum} />
-                <View style={styles.Top}>
-                    <View style={styles.title}>
-                        <TitleMuseum />
-                    </View>
-                </View>
-                <View style={styles.Bottom}> 
-                    <View style={styles.btnNvaigation}>
-                        <TouchableOpacity style={styles.btn}>
-                            <View style={styles.lingkaran}>
-                                <Image source={description} style={styles.imageDesc} />
-                            </View>
-                            <Text style={styles.titleBtn}>Deskripsi</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btn}>
-                            <View style={styles.lingkaran}>
-                                <Image source={gallery} style={styles.imagegallery} />
-                            </View>
-                            <Text style={styles.titleBtn}>Galeri Foto</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btn}>
-                            <View style={styles.lingkaran}>
-                                <Image source={location} style={styles.imageDesc} />
-                            </View>
-                            <Text style={styles.titleBtn}>Lokasi</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.Rating}>5.0</Text>
-                            <View style={styles.containerStar}>
-                                <Image source={star} style={styles.imgstar} />
-                                <Image source={star} style={styles.imgstar} />
-                                <Image source={star} style={styles.imgstar} />
-                                <Image source={star} style={styles.imgstar} />
-                                <Image source={star} style={styles.imgstar} />
-                            </View>
-                            <Text style={styles.titleBtn}>200 Reviews</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.pembatas}>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20, width:'95%',}}/>
-                    </View>
-                    <ScrollView style={styles.scroll}>
-                        <View style={styles.isiContent}>
-                            <ContentDesc />
-                        </View>
-                    </ScrollView>
-                   
-                    
+        <View style={styles.container}>
+            <Image source={museum} style={styles.fotoMuseum} />
+            <View style={styles.Top}>
+                <View style={styles.title}>
+                    <TitleMuseum />
                 </View>
             </View>
+            <View style={styles.mid}> 
+                <View style={styles.btnNvaigation}>
+                    <TouchableOpacity style={styles.btn}>
+                        <View style={styles.lingkaran}>
+                            <Image source={description} style={styles.imageDesc} />
+                        </View>
+                        <Text style={styles.titleBtn}>Deskripsi</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn}>
+                        <View style={styles.lingkaran}>
+                            <Image source={gallery} style={styles.imagegallery} />
+                        </View>
+                        <Text style={styles.titleBtn}>Galeri Foto</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn}>
+                        <View style={styles.lingkaran}>
+                            <Image source={location} style={styles.imageDesc} />
+                        </View>
+                        <Text style={styles.titleBtn}>Lokasi</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn}>
+                        <Text style={styles.Rating}>5.0</Text>
+                        <View style={styles.containerStar}>
+                            <Image source={star} style={styles.imgstar} />
+                            <Image source={star} style={styles.imgstar} />
+                            <Image source={star} style={styles.imgstar} />
+                            <Image source={star} style={styles.imgstar} />
+                            <Image source={star} style={styles.imgstar} />
+                        </View>
+                        <Text style={styles.titleBtn}>200 Reviews</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.pembatas}>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20, width:'95%',}}/>
+                </View>
+                <ScrollView style={styles.scroll}>
+                    <View style={styles.isiContent}>
+                        <ContentDesc />
+                    </View>
+                </ScrollView>
+            </View>
+            <View style={styles.containerBtn}>
+                <View style={styles.containerTextbeli}>
+                    <Text style={{fontSize: 18,}}>Rp. 10.0000 / Tiket</Text>
+                </View>
+                <TouchableOpacity style={styles.btnbeli}>
+                    <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',}}>
+                        Beli
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </View>
         
     )
 }
@@ -81,10 +89,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         // backgroundColor: 'yellow',
+        marginBottom: 20,
     },
 
-    Bottom:{
-        flex: 1.5,
+    mid:{
+        flex: 1.7,
         backgroundColor: 'white',
         borderTopLeftRadius: 30, 
         borderTopRightRadius: 30,
@@ -94,7 +103,7 @@ const styles = StyleSheet.create({
     },
 
     fotoMuseum:{
-        height: '50%',
+        height: '40%',
         width: '100%',
         position: 'absolute',
     },
@@ -129,7 +138,6 @@ const styles = StyleSheet.create({
         // backgroundColor: 'green',
         height: 80,
         justifyContent: "space-around",
-        alignItems: "center",
         marginTop: 20,
 
     },
@@ -174,5 +182,36 @@ const styles = StyleSheet.create({
     imagegallery:{
         height: 27,
         width: 27,
+    },
+
+    containerBtn:{
+        height: 60,
+        width: '100%',
+        // borderTopWidth: 5,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        // borderColor:'#C4C4C4',
+        backgroundColor: 'white'
+    },
+
+    btnbeli:{
+        backgroundColor: '#A01F1F',
+        height: 60,
+        width: 100,
+        // borderColor:'B',
+        // borderWidth: 1,
+        // borderTopLeftRadius: 30,
+        // borderBottomLeftRadius: 30,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    containerTextbeli:{
+        justifyContent: "center",
+        backgroundColor: 'white',
+        height: 60,
+        width: '70%',
+        alignItems: "center",
     }
 })

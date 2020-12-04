@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const ContentDesc = () => {
     return (
-        <View>
+        <View style={{}}>
             <Text style={styles.text}>
                 Museum Fatahillah memiliki nama resmi Museum Sejarah Jakarta adalah sebuah museum yang terletak di Jalan Taman Fatahillah No. 1, Jakarta Barat dengan luas lebih dari 1.300 meter persegi.
             </Text>

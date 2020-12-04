@@ -6,7 +6,7 @@ import Museum from '../components/Museum'
 import MuseumAll from '../components/MuseumAll'
 import * as Animatable from 'react-native-animatable'
 
-const AllMuseumScreen = () => {
+const AllMuseumScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.up}>
@@ -30,22 +30,22 @@ const AllMuseumScreen = () => {
             animation="fadeInUpBig"
             style={styles.down}>
                 <ScrollView style={styles.contenContainer}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('DescMuseum')}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('DescMuseum')}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('DescMuseum')}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('DescMuseum')}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('DescMuseum')}>
                         <MuseumAll />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={ () => navigation.navigate('DescMuseum')}>
                         <MuseumAll />
                     </TouchableOpacity>
                 </ScrollView>
