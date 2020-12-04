@@ -11,16 +11,22 @@ import * as Animatable from 'react-native-animatable'
 const HistoryTicketSuccessScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Animatable.View 
+            {/* <Animatable.View 
             animation="fadeInDownBig"
             style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
-            </Animatable.View>
+            </Animatable.View> */}
             <Animatable.View 
             animation="fadeInUpBig"
             style={styles.containerBottom}>
                 <ScrollView style={{marginTop: 15,}}>
                     <View style={styles.bottomBottom}>
+                        <TouchableOpacity style={styles.BtnTransaksi}>
+                            <Transaksi status="Lunas"/>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.BtnTransaksi}>
+                            <Transaksi status="Lunas"/>
+                        </TouchableOpacity>
                         <TouchableOpacity style={styles.BtnTransaksi}>
                             <Transaksi status="Lunas"/>
                         </TouchableOpacity>
@@ -67,9 +73,9 @@ const styles = StyleSheet.create({
     containerBottom:{
         flex: 2,
         backgroundColor: 'white',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        marginTop: 30,
+        // borderTopLeftRadius: 30,
+        // borderTopRightRadius: 30,
+        // marginTop: 30,
         alignItems:"center",
     },
 

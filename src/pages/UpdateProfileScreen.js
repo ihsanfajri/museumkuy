@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
     },
 
     updateContainer:{
+        marginTop:50,
         alignItems: 'flex-end',
         // backgroundColor: 'yellow',
     },

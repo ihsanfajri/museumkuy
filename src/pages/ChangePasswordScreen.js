@@ -104,10 +104,9 @@ const styles = StyleSheet.create({
         color:'white'
     },
     updateContainer:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'flex-end',
-        alignItems:'center'
+        paddingVertical:50,
+        // backgroundColor:'yellow',
+        alignItems:'flex-end'
     },
     buttonUpdate:{
         backgroundColor:'#A01F1F',
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
         height:40,
         padding:10,
         alignItems:'center',
-        marginTop:100,
+        
     },
     fontUpdate:{
         fontWeight:'bold',
