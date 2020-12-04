@@ -28,6 +28,7 @@ import iconTransaksi from '../assets/image/transfer.png'
 import iconAccount from '../assets/image/user.png'
 import gambarTransaksi from '../assets/image/MenuTransaksi.png'
 import * as Animatable from 'react-native-animatable'
+import HeaderTransaksi from '../components/HeaderTransaksi';
 
 
 const Stack = createStackNavigator();
@@ -47,8 +48,22 @@ const IconBottom = (props) => {
 const HistoryTransaksi = () => {
   return(
     <View style={styles.container}>
-      
-        <TabTop.Navigator>
+        <HeaderTransaksi/>
+        <TabTop.Navigator swipeEnabled={true} tabBarOptions={{
+          labelStyle: {
+            fontSize: 10,
+          },
+          tabStyle: {
+            width: 90,
+          },
+          style:{
+            borderTopLeftRadius:20,
+            borderTopRightRadius:20,
+            marginTop:30
+
+          }
+          
+        }} >
           <Tab.Screen name="Transaksi Pending" component={HistoryTicketScreen} />
           <Tab.Screen name="Transaksi Berhasil" component={HistoryTicketSuccessScreen} />
           <Tab.Screen name="Transaksi Gagal" component={HistoryTicketFailedScreen} />
@@ -63,7 +78,7 @@ const HistoryTransaksi = () => {
 
 const Dashboard = () => {
     return(
-      <Tab.Navigator>
+      <Tab.Navigator >
         <Tab.Screen 
           name="Home" 
           component={HomeScreen}

@@ -11,11 +11,11 @@ import * as Animatable from 'react-native-animatable'
 const HistoryTicketFailedScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Animatable.View 
+            {/* <Animatable.View 
             animation="fadeInDownBig"
             style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
-            </Animatable.View>
+            </Animatable.View> */}
             <Animatable.View 
             animation="fadeInUpBig"
             style={styles.containerBottom}>
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
     containerBottom:{
         flex: 2,
         backgroundColor: 'white',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        marginTop: 30,
+        // borderTopLeftRadius: 30,
+        // borderTopRightRadius: 30,
+        // marginTop: 30,
         alignItems:"center",
     },
 

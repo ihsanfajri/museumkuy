@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import MenuTransaksi from '../components/MenuTransaksi'
 import Transaksi from '../components/Transaksi'
@@ -14,12 +14,12 @@ const HistoryTicketScreen = ({navigation}) => {
     
     return (
         <View style={styles.container}>
-            <Animatable.View 
+            {/* <Animatable.View 
             animation="fadeInDownBig"
             style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
                 <Text style={styles.title}> History Transaksi </Text>
-            </Animatable.View>
+            </Animatable.View> */}
             <Animatable.View 
             animation="fadeInUpBig"
             style={styles.containerBottom}>
@@ -47,6 +47,15 @@ const HistoryTicketScreen = ({navigation}) => {
                 <ScrollView style={{marginTop: 15,}}>
                     <View style={styles.bottomBottom}>
                         <TouchableOpacity style={styles.BtnTransaksi} onPress={ () => navigation.navigate(TransaksiPending)}>
+                            <Transaksi status="Belum Lunas"/>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.BtnTransaksi}>
+                            <Transaksi status="Belum Lunas"/>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.BtnTransaksi}>
+                            <Transaksi status="Belum Lunas"/>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.BtnTransaksi}>
                             <Transaksi status="Belum Lunas"/>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.BtnTransaksi}>
@@ -92,9 +101,9 @@ const styles = StyleSheet.create({
     containerBottom:{
         flex: 2,
         backgroundColor: 'white',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        marginTop: 30,
+        // borderTopLeftRadius: 30,
+        // borderTopRightRadius: 30,
+        // marginTop: 30,
         alignItems:"center",
     },
 
