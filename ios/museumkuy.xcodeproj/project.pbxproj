@@ -32,6 +32,8 @@
 		8E137D9EAA8F48DD89B589A5 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19A5D4D2BC4948B4B1A950E4 /* Octicons.ttf */; };
 		2FE321F396DB4EB5B5EB2A2C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D34AF26B012048B3AE07DFD6 /* SimpleLineIcons.ttf */; };
 		C5CE2CC89B1D4B978530F278 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 657200E9FDA2444682037D4A /* Zocial.ttf */; };
+		06DEFE949DDB4843B55FEA54 /* Ranga-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33B4E40A0C104C8FBBF06809 /* Ranga-Bold.ttf */; };
+		9A517916BFAC4C368B775BC2 /* Ranga-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC9B5882F11B479BB97C95AF /* Ranga-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		19A5D4D2BC4948B4B1A950E4 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D34AF26B012048B3AE07DFD6 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		657200E9FDA2444682037D4A /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		33B4E40A0C104C8FBBF06809 /* Ranga-Bold.ttf */ = {isa = PBXFileReference; name = "Ranga-Bold.ttf"; path = "../src/assets/fonts/Ranga-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EC9B5882F11B479BB97C95AF /* Ranga-Regular.ttf */ = {isa = PBXFileReference; name = "Ranga-Regular.ttf"; path = "../src/assets/fonts/Ranga-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,8 @@
 				19A5D4D2BC4948B4B1A950E4 /* Octicons.ttf */,
 				D34AF26B012048B3AE07DFD6 /* SimpleLineIcons.ttf */,
 				657200E9FDA2444682037D4A /* Zocial.ttf */,
+				33B4E40A0C104C8FBBF06809 /* Ranga-Bold.ttf */,
+				EC9B5882F11B479BB97C95AF /* Ranga-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +374,8 @@
 				8E137D9EAA8F48DD89B589A5 /* Octicons.ttf in Resources */,
 				2FE321F396DB4EB5B5EB2A2C /* SimpleLineIcons.ttf in Resources */,
 				C5CE2CC89B1D4B978530F278 /* Zocial.ttf in Resources */,
+				06DEFE949DDB4843B55FEA54 /* Ranga-Bold.ttf in Resources */,
+				9A517916BFAC4C368B775BC2 /* Ranga-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

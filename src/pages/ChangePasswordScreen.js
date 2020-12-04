@@ -1,14 +1,13 @@
 import React,{useState} from 'react'
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Modal, TouchableHighlight,ScrollView } from 'react-native'
-import logoEdit from '../assets/image/editprofile.png'
+import logoChangePassword from '../assets/image/changepassword.png'
 import * as Animatable from 'react-native-animatable'
 
 
-const UpdateProfileScreen = ({navigation}) => {
+const ChangePasswordScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
-
-       <ScrollView style={styles.scroll}> 
+        <ScrollView style={styles.scroll}> 
         <View style={styles.container}>
             {/*-------- modal ------- */}
             <Modal
@@ -21,7 +20,7 @@ const UpdateProfileScreen = ({navigation}) => {
                 >
                     <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Update Profile Success</Text>
+                        <Text style={styles.modalText}>your password has been updated successfully</Text>
 
                         <TouchableHighlight
                         style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
@@ -40,17 +39,13 @@ const UpdateProfileScreen = ({navigation}) => {
 
 
             <View style={styles.up}>
-               <Image source={logoEdit} style={styles.image} /> 
+               <Image source={logoChangePassword} style={styles.image} /> 
             </View>
             <Animatable.View animation="fadeInUpBig" style={styles.down}>
-                <TextInput placeholder="Name" style={styles.textInput} />
-                <TextInput placeholder="Email" style={styles.textInput} />
-                <View style={styles.fotoContainer}>
-                    <TextInput placeholder="Photo" style={styles.textInput} />
-                    <TouchableOpacity style={styles.buttonUpload}>
-                        <Text style={styles.fontButton}>Choose</Text>
-                    </TouchableOpacity>
-                </View>
+                <TextInput placeholder="Current Password" style={styles.textInput} />
+                <TextInput placeholder="New Password" style={styles.textInput} />
+                <TextInput placeholder="Confirm New Password" style={styles.textInput} />
+                
                 <View style={styles.updateContainer}>
                     <TouchableOpacity style={styles.buttonUpdate} onPress={() => setModalVisible(true)}>
                         <Text style={styles.fontUpdate}>Update</Text>
@@ -62,7 +57,7 @@ const UpdateProfileScreen = ({navigation}) => {
     )
 }
 
-export default UpdateProfileScreen
+export default ChangePasswordScreen
 
 const styles = StyleSheet.create({
     scroll:{
@@ -81,8 +76,8 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     down:{
-        marginTop:10,
-        flex:2,
+        marginTop:15,
+        flex:3,
         backgroundColor:'white',
         borderTopLeftRadius:30,
         borderTopRightRadius:30,

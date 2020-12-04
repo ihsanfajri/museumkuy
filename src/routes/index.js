@@ -12,6 +12,7 @@ import LoginScreen from '../pages/LoginScreen'
 import AllMuseumScreen from '../pages/AllMuseumScreen'
 import UpdateProfileScreen from '../pages/UpdateProfileScreen'
 import TransaksiPendingScreen from '../pages/TransaksiPendingScreen'
+import ChangePasswordScreen from '../pages/ChangePasswordScreen'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -98,6 +99,17 @@ const Router = () => {
 
           <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{
             title: 'Update Profile',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+          <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} options={{
+            title: 'Change Password',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },

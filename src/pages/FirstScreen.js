@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
     moto:{
         fontSize: 20,
         fontWeight: 'bold',
-        fontFamily: 'Ranga',
+        fontFamily: 'Ranga-Regular',
+        fontStyle: 'italic',
         marginBottom:50
     },
     buttonSignup:{

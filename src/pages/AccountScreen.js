@@ -24,7 +24,7 @@ const AccountScreen = ({navigation}) => {
                     <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')}>
                         <IconAccount name="Edit Profile" image={editIcon} />
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('ChangePassword')}>
                         <IconAccount name="Change Password" image={passwordIcon} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Login')}>
