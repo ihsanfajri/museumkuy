@@ -18,6 +18,9 @@ import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
 import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 
 
+import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
+
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import iconHome from '../assets/image/home.png'
@@ -143,9 +146,11 @@ const Router = () => {
             },
           }}/>
 
+
         <Stack.Screen name="HistorySuccess" component={HistoryTicketSuccessScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
-        
+      
+          <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     )
 }
