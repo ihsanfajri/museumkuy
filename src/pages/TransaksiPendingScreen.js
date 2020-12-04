@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
     kotak:{
         width: 285,
-        height: 418,
+        height: 450,
         borderWidth: 2,
         backgroundColor: 'white',
         borderRadius: 30, 
@@ -75,8 +75,4 @@ const styles = StyleSheet.create({
     containerBtn:{
         marginTop: 26,
     }
-
-    
-
-
 })
