@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 
 import museum from '../assets/image/musuem.jpg'
 
-const TransaksiPending = () => {
+const Transaksi = ({status}) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -14,13 +14,19 @@ const TransaksiPending = () => {
                 <Text styles={styles.fontTanggal}>11/29/2020</Text>
             </View>
             <View style={styles.statusContainer}>
-                <Text style={styles.fontStatus}>Belum Bayar</Text>
+                {
+                    status == "Lunas" ? (
+                        <Text style={styles.fontSukses}>{status}</Text>
+                    ):(
+                        <Text style={styles.fontBelumBayar}>{status}</Text>
+                    )
+                }
             </View>
         </View>
     )
 }
 
-export default TransaksiPending
+export default Transaksi
 
 const styles = StyleSheet.create({
     container:{
@@ -44,10 +50,12 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
 
-    fontStatus:{
-        color: "red",
+    fontSukses:{
+        color:"green",
     },
-
+    fontBelumBayar:{
+        color:"red"
+    }
    
 
 })

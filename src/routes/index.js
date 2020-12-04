@@ -1,10 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../pages/HomeScreen'
 import SplahScreen from '../pages/SpalshScreen'
-import HistoryTickeetScreen from '../pages/HistoryTicketScreen'
+import HistoryTicketScreen from '../pages/HistoryTicketScreen'
 import AccountScreen from '../pages/AccountScreen'
 import FirstScreen from '../pages/FirstScreen'
 import RegisterScreen from '../pages/RegisterScreen'
@@ -13,16 +14,22 @@ import AllMuseumScreen from '../pages/AllMuseumScreen'
 import UpdateProfileScreen from '../pages/UpdateProfileScreen'
 import TransaksiPendingScreen from '../pages/TransaksiPendingScreen'
 import ChangePasswordScreen from '../pages/ChangePasswordScreen'
+import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
+import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
+
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import iconHome from '../assets/image/home.png'
 import iconTransaksi from '../assets/image/transfer.png'
 import iconAccount from '../assets/image/user.png'
+import gambarTransaksi from '../assets/image/MenuTransaksi.png'
+import * as Animatable from 'react-native-animatable'
 
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const TabTop = createMaterialTopTabNavigator();
 
 const IconBottom = (props) => {
   const {color, focused} = props.data
@@ -33,6 +40,23 @@ const IconBottom = (props) => {
     </View>
   )
 }
+
+const HistoryTransaksi = () => {
+  return(
+    <View style={styles.container}>
+      
+        <TabTop.Navigator>
+          <Tab.Screen name="Transaksi Pending" component={HistoryTicketScreen} />
+          <Tab.Screen name="Transaksi Berhasil" component={HistoryTicketSuccessScreen} />
+          <Tab.Screen name="Transaksi Gagal" component={HistoryTicketFailedScreen} />
+          <Tab.Screen name="Semua Transaksi" component={HistoryTicketSuccessScreen} />
+        </TabTop.Navigator>
+      
+    </View>
+  )
+}
+
+
 
 const Dashboard = () => {
     return(
@@ -47,7 +71,7 @@ const Dashboard = () => {
         />
         <Tab.Screen 
           name="HistoryTicket" 
-          component={HistoryTickeetScreen} 
+          component={HistoryTransaksi} 
           options={{
             tabBarLabel: () => {return null},
             tabBarIcon: (props) => { return <IconBottom data={props} image={iconTransaksi}/>}
@@ -118,6 +142,9 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
+
+        <Stack.Screen name="HistorySuccess" component={HistoryTicketSuccessScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
         
       </Stack.Navigator>
     )
@@ -125,4 +152,32 @@ const Router = () => {
 
 export default Router
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#A01F1F',    
+  },
+  containerTop:{
+    flex: 0.5,
+    backgroundColor: 'white',
+    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 30,
+    justifyContent:"center",
+    alignItems:"center",
+  },
+
+  title:{
+      fontSize: 18,
+      fontWeight: '400',
+      marginTop: 15,
+  },
+
+  containerBottom:{
+    flex: 2,
+    backgroundColor: 'white',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    marginTop: 30,
+    alignItems:"center",
+},
+})

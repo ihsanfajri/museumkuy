@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#DBD7D2',
         borderRadius:10,
-        marginTop:20
+        marginVertical:15
     },
     buttonUpload:{
         position:'absolute',
