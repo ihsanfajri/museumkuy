@@ -7,58 +7,61 @@ import * as Animatable from 'react-native-animatable'
 const UpdateProfileScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
-        <View style={styles.container}>
-            {/*-------- modal ------- */}
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                Alert.alert("Modal has been closed.");
-                }}
-            >
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Update Profile Success</Text>
+        <ScrollView style={{backgroundColor: 'white',}}>
+            <View style={styles.container}>
+                {/*-------- modal ------- */}
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    }}
+                >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <Text style={styles.modalText}>Update Profile Success</Text>
 
-                        <TouchableHighlight
-                            style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
-                            onPress={() => {
-                                setModalVisible(!modalVisible);
-                                navigation.navigate('Account');
-                            }}
-                        >
-                        <Text style={styles.textStyle}>OK</Text>
-                        </TouchableHighlight>
+                            <TouchableHighlight
+                                style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
+                                onPress={() => {
+                                    setModalVisible(!modalVisible);
+                                    navigation.navigate('Account');
+                                }}
+                            >
+                            <Text style={styles.textStyle}>OK</Text>
+                            </TouchableHighlight>
+                        </View>
                     </View>
+                </Modal>
+                {/* ------------ */}
+                <View style={styles.up}>
+                    <Image source={logoEdit} style={styles.image} /> 
                 </View>
-            </Modal>
-            {/* ------------ */}
-            <View style={styles.up}>
-                <Image source={logoEdit} style={styles.image} /> 
-            </View>
 
-            <Animatable.View animation="fadeInUpBig" style={styles.containerBottom} >
-                <View style={styles.down}>
-                    <View style={styles.containerInput}>
-                        <TextInput placeholder="Name" style={styles.textInput} />
-                        <TextInput placeholder="Email" style={styles.textInput} />
-                        <View style={styles.fotoContainer}>
-                            <TextInput placeholder="Photo" style={styles.textInput} />
-                            <TouchableOpacity style={styles.buttonUpload}>
-                                <Text style={styles.fontButton}>Choose</Text>
+                <Animatable.View animation="fadeInUpBig" style={styles.containerBottom} >
+                    <View style={styles.down}>
+                        <View style={styles.containerInput}>
+                            <TextInput placeholder="Name" style={styles.textInput} />
+                            <TextInput placeholder="Email" style={styles.textInput} />
+                            <View style={styles.fotoContainer}>
+                                <TextInput placeholder="Photo" style={styles.textInput} />
+                                <TouchableOpacity style={styles.buttonUpload}>
+                                    <Text style={styles.fontButton}>Choose</Text>
+                                </TouchableOpacity>
+                            </View>
+                            
+                        </View>
+                        <View style={styles.updateContainer}>
+                            <TouchableOpacity style={styles.buttonUpdate} onPress={() => setModalVisible(true)}>
+                                <Text style={styles.fontUpdate}>Update</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
-                   
-                    <View style={styles.updateContainer}>
-                        <TouchableOpacity style={styles.buttonUpdate} onPress={() => setModalVisible(true)}>
-                            <Text style={styles.fontUpdate}>Update</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </Animatable.View>
-        </View>
+                </Animatable.View>
+            </View>
+        </ScrollView>
+        
                 
     )
 }
@@ -67,24 +70,28 @@ export default UpdateProfileScreen
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        height: '100%',
         backgroundColor:'#A01F1F',
     },
 
     up:{
-        flex: 1,
+        flex:1,
         height: '100%',
         // backgroundColor: 'blue',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        marginBottom: 20,
+        marginTop: 20,
     },
 
     down:{
-        flex: 1,
         backgroundColor:'white',
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
         paddingHorizontal:30,
+        width: '100%',
+        height: '100%',
+
     },
     textInput:{
         borderWidth:1,
@@ -92,7 +99,7 @@ const styles = StyleSheet.create({
         borderRadius:10,
         marginVertical:15,
         marginTop:20, 
-        width: 275,
+        width: 300,
         height: 40,
     },
     buttonUpload:{
@@ -109,19 +116,20 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color:'white'
     },
+
     updateContainer:{
-        flexDirection:'row',
-        justifyContent:'flex-end',
-        alignItems:'center',
+        alignItems: 'flex-end',
+        // backgroundColor: 'yellow',
     },
+
     buttonUpdate:{
         backgroundColor:'#A01F1F',
         borderRadius:40,
-        width:124,
+        width:150,
         height:40,
         padding:10,
         alignItems:'center',
-        marginTop:100,
+        marginTop: 10,
     },
     fontUpdate:{
         fontWeight:'bold',
@@ -181,7 +189,6 @@ const styles = StyleSheet.create({
 
       containerInput: {
           alignItems: "center",
-          
       }
 
 })
