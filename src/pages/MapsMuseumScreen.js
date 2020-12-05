@@ -23,7 +23,7 @@ const MapsMuseumScreen = ({navigation}) => {
             </View>
             <View style={styles.mid}> 
                 <View style={styles.btnNvaigation}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('DescMuseum')}>
                         <View style={styles.lingkaran}>
                             <Image source={description} style={styles.imageDesc} />
                         </View>

@@ -13,7 +13,7 @@ import location from '../assets/image/placeholder.png'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import Galerifoto from '../components/Galerifoto';
 
-const GaleriMuseumScreen = () => {
+const GaleriMuseumScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image source={museum} style={styles.fotoMuseum} />
@@ -24,7 +24,7 @@ const GaleriMuseumScreen = () => {
             </View>
             <View style={styles.mid}> 
                 <View style={styles.btnNvaigation}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('DescMuseum') }>
                         <View style={styles.lingkaran}>
                             <Image source={description} style={styles.imageDesc} />
                         </View>
@@ -36,9 +36,9 @@ const GaleriMuseumScreen = () => {
                         </View>
                         <Text style={styles.titleBtn}>Galeri Foto</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('MapMuseum') }>
                         <View style={styles.lingkaran}>
-                            <Image source={location} style={styles.imageDesc} />
+                            <Image source={location} style={styles.imageDesc}  />
                         </View>
                         <Text style={styles.titleBtn}>Lokasi</Text>
                     </TouchableOpacity>
