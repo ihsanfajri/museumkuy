@@ -1,18 +1,18 @@
 import React from 'react'
-import { Image, StyleSheet, View, Text, TouchableOpacityComponent } from 'react-native'
+import { Image, StyleSheet, View, Text, TouchableOpacityComponent,ScrollView, TouchableOpacity } from 'react-native'
 import { useScrollToTop } from '@react-navigation/native';
 
 import TitleMuseum from '../components/TitleMuseum'
 import ContentDesc from '../components/ContentDesc'
-
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import museum from '../assets/image/musuem.jpg'
 import description from '../assets/image/clipboard.png'
 import star from '../assets/image/star.png'
 import gallery from '../assets/image/gallery.png'
 import location from '../assets/image/placeholder.png'
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import Maps from '../components/Maps';
 
-const DescriptionMuseumScreen = ({navigation}) => {
+const MapsMuseumScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image source={museum} style={styles.fotoMuseum} />
@@ -35,7 +35,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
                         </View>
                         <Text style={styles.titleBtn}>Galeri Foto</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('MapMuseum')}>
+                    <TouchableOpacity style={styles.btn}>
                         <View style={styles.lingkaran}>
                             <Image source={location} style={styles.imageDesc} />
                         </View>
@@ -56,11 +56,10 @@ const DescriptionMuseumScreen = ({navigation}) => {
                 <View style={styles.pembatas}>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20, width:'95%',}}/>
                 </View>
-                <ScrollView style={styles.scroll}>
-                    <View style={styles.isiContent}>
-                        <ContentDesc />
-                    </View>
-                </ScrollView>
+                <View style={styles.isiContent}>            
+                       <Maps />
+                </View>
+                
             </View>
             <View style={styles.containerBtn}>
                 <View style={styles.containerTextbeli}>
@@ -77,7 +76,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
     )
 }
 
-export default DescriptionMuseumScreen
+export default MapsMuseumScreen
 
 const styles = StyleSheet.create({
     container:{
@@ -171,8 +170,10 @@ const styles = StyleSheet.create({
     isiContent:{
         height: '100%',
         width: '85%',
-        alignItems: "center",
+        // justifyContent:'center',
+        // alignItems: "center",
         marginLeft: 30,
+        marginTop: 30,
     },
 
     scroll:{
@@ -213,5 +214,6 @@ const styles = StyleSheet.create({
         height: 60,
         width: '70%',
         alignItems: "center",
-    }
+    },
+   
 })

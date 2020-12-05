@@ -19,6 +19,7 @@ import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
+import MapsMuseumScreen from '../pages/MapsMuseumScreen'
 
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -166,8 +167,9 @@ const Router = () => {
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
       
         <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
-        
         <Stack.Screen name="GaleriMuseum" component={GaleriMuseumScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="MapMuseum" component={MapsMuseumScreen} options={{ headerShown: false }}/>
+       
       
       </Stack.Navigator>
     )
