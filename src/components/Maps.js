@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
         flex:1,
-        marginHorizontal:20,
-        backgroundColor:'blue'
+        // marginHorizontal:20,
+        // backgroundColor:'blue'
       },
       map: {
-        ...StyleSheet.absoluteFillObject,
+        // ...StyleSheet.absoluteFillObject,
+        height: 200,
+        width: 300
     },
 })

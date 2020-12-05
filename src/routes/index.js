@@ -16,6 +16,7 @@ import TransaksiPendingScreen from '../pages/TransaksiPendingScreen'
 import ChangePasswordScreen from '../pages/ChangePasswordScreen'
 import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
 import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
+import buyTiketScreen from '../pages/BeliTiketScreen'
 
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
@@ -165,10 +166,10 @@ const Router = () => {
 
         <Stack.Screen name="HistorySuccess" component={HistoryTicketSuccessScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
-      
         <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="GaleriMuseum" component={GaleriMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="MapMuseum" component={MapsMuseumScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="beliTiket" component={buyTiketScreen} options={{ headerShown: false }}/>
        
       
       </Stack.Navigator>

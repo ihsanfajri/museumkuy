@@ -67,7 +67,7 @@ const GaleriMuseumScreen = ({navigation}) => {
                 <View style={styles.containerTextbeli}>
                     <Text style={{fontSize: 18,}}>Rp. 10.0000 / Tiket</Text>
                 </View>
-                <TouchableOpacity style={styles.btnbeli}>
+                <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('beliTiket')}>
                     <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',}}>
                         Beli
                     </Text>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     },
 
     mid:{
-        flex: 1.7,
+        flex: 2.5,
         backgroundColor: 'white',
         borderTopLeftRadius: 30, 
         borderTopRightRadius: 30,
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     },
 
     fotoMuseum:{
-        height: '40%',
+        height: '35%',
         width: '100%',
         position: 'absolute',
     },
