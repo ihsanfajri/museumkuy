@@ -17,6 +17,7 @@ import ChangePasswordScreen from '../pages/ChangePasswordScreen'
 import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
 import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 import buyTiketScreen from '../pages/BeliTiketScreen'
+import UploadScreen from '../pages/TakePictureScreen'
 
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
@@ -141,6 +142,17 @@ const Router = () => {
             },
           }}/>
 
+        <Stack.Screen name="UploadPembayaran" component={UploadScreen} options={{
+            title: 'Upload Bukti Pembayaran',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
           <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{
             title: 'Update Profile',
             headerStyle: {
@@ -183,27 +195,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#A01F1F',    
   },
-  containerTop:{
-    flex: 0.5,
-    backgroundColor: 'white',
-    borderBottomRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    justifyContent:"center",
-    alignItems:"center",
-  },
-
-  title:{
-      fontSize: 18,
-      fontWeight: '400',
-      marginTop: 15,
-  },
-
-  containerBottom:{
-    flex: 2,
-    backgroundColor: 'white',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    marginTop: 30,
-    alignItems:"center",
-},
+  
 })

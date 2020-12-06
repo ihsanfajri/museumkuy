@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import TransaksiPending from '../components/TransaksiPending2'
 
-const TransaksiPendingScreen = () => {
+const TransaksiPendingScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.TopBackground}>
@@ -15,7 +15,7 @@ const TransaksiPendingScreen = () => {
                     <TransaksiPending/>
                 </View>
                 <View style={styles.containerBtn}>
-                    <TouchableOpacity style={styles.btnUpload}>
+                    <TouchableOpacity style={styles.btnUpload} onPress={() => navigation.navigate('UploadPembayaran')} >
                         <Text style={{color: 'white', fontWeight: 'bold',}}>Upload Bukti Pembayaran</Text>
                     </TouchableOpacity>
                 </View>

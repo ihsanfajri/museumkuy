@@ -46,7 +46,7 @@ const HistoryTicketScreen = ({navigation}) => {
                 
                 <ScrollView style={{marginTop: 15,}}>
                     <View style={styles.bottomBottom}>
-                        <TouchableOpacity style={styles.BtnTransaksi}>
+                        <TouchableOpacity style={styles.BtnTransaksi} onPress={() => navigation.navigate('TransaksiPending')}>
                             <Transaksi status="Belum Lunas"/>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.BtnTransaksi}> 
