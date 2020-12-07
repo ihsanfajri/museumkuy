@@ -23,7 +23,7 @@ const BeliTiketScreen = ({navigation}) => {
             <View style={styles.containerBtn}>
                 <View style={styles.containerTextbeli}>
                     <Text style={{fontSize: 14, alignSelf: 'flex-start', marginTop: 10,}}>Total Harga :</Text>
-                    <Text style={{fontSize: 25, marginBottom: 10,}}>Rp. 50.0000</Text>
+                    <Text style={{fontSize: 25, marginBottom: 10,}}>Rp. 50.000</Text>
                 </View>
                 <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('TransaksiPending')}>
                     <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',alignItems:'center'}}>
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         // backgroundColor: 'yellow',
-        marginBottom: 20,
-        marginTop: 20,
+        // marginBottom: 20,
+        // marginTop: 20,
     },
 
     mid:{
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     },
 
     fotoMuseum:{
-        height: '100%',
-        width: '80%',
+        height: '150%',
+        width: '100%',
         // position: 'absolute',
     },
 
