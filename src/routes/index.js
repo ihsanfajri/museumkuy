@@ -23,6 +23,8 @@ import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
 import MapsMuseumScreen from '../pages/MapsMuseumScreen'
 
+import TransaksiSuksesScreen from '../pages/TransaksiSuksesScreen'
+
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -182,6 +184,7 @@ const Router = () => {
         <Stack.Screen name="GaleriMuseum" component={GaleriMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="MapMuseum" component={MapsMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="beliTiket" component={buyTiketScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="TransaksiSukses" component={TransaksiSuksesScreen} options={{ headerShown: false }}/>
        
       
       </Stack.Navigator>

@@ -10,7 +10,7 @@ import ContentDesc from '../components/ContentDesc'
 
 
 
-const BeliTiketScreen = () => {
+const BeliTiketScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             
@@ -22,12 +22,12 @@ const BeliTiketScreen = () => {
             </View>
             <View style={styles.containerBtn}>
                 <View style={styles.containerTextbeli}>
-                    <Text style={{fontSize: 14, alignSelf: 'flex-start', marginTop: 10,}}>Total :</Text>
-                    <Text style={{fontSize: 25, marginBottom: 10,}}>Rp. 10.0000</Text>
+                    <Text style={{fontSize: 14, alignSelf: 'flex-start', marginTop: 10,}}>Total Harga :</Text>
+                    <Text style={{fontSize: 25, marginBottom: 10,}}>Rp. 50.0000</Text>
                 </View>
-                <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('beliTiket')}>
-                    <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',}}>
-                        Beli
+                <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('TransaksiPending')}>
+                    <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',alignItems:'center'}}>
+                        Beli Tiket
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -81,14 +81,16 @@ const styles = StyleSheet.create({
 
     btnbeli:{
         backgroundColor: '#A01F1F',
-        height: 60,
-        width: 100,
+        // height: 60,
+        // width: 200,
         // borderColor:'B',
         // borderWidth: 1,
-        // borderTopLeftRadius: 30,
-        // borderBottomLeftRadius: 30,
+        borderTopLeftRadius: 30,
+        borderBottomLeftRadius: 30,
         justifyContent: "center",
         alignItems: "center",
+        paddingHorizontal:20,
+        paddingVertical:30
     },
 
     containerTextbeli:{
