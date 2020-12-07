@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, Modal, TouchableHighlight, ScrollView } from 'react-native'
-import Museum from '../assets/logo/museumkuy.png'
+import Museum from '../assets/logo/museumkuy01.png'
 
 
 const RegisterScreen = ({navigation}) => {

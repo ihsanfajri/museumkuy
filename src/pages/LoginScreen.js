@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native'
-import Museum from '../assets/logo/museumkuy.png'
+import Museum from '../assets/logo/museumkuy01.png'
 
 const LoginScreen = ({navigation}) => {
     return (
