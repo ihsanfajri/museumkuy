@@ -12,6 +12,8 @@ target 'museumkuy' do
 
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
+  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
+
   target 'museumkuyTests' do
     inherit! :complete
     # Pods for testing

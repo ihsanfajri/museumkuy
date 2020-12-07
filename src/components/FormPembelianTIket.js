@@ -1,11 +1,31 @@
-import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { TextInput } from 'react-native-gesture-handler'
+import React,{useState} from 'react'
+import { Image, StyleSheet, Text, TouchableOpacity, View,TextInput, Button } from 'react-native'
+import DateTimePicker from '@react-native-community/datetimepicker';
 
+import calendar from '../assets/image/calendar.png'
 import minus from '../assets/image/remove.png'
 import plus from '../assets/image/plus.png'
 
 const FormPembelianTIket = () => {
+    const [date, setDate] = useState(new Date(1598051730000));
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false);
+
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(Platform.OS === 'ios');
+        setDate(currentDate);
+      };
+
+    const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+      };
+    
+      const showDatepicker = () => {
+        showMode('date');
+      };
+
     return (
         <View style={styles.container}>
             <View style={styles.title}>
@@ -39,7 +59,21 @@ const FormPembelianTIket = () => {
                         <Text style={{fontSize: 14,}}>Tanggal Kunjungan</Text>
                     </View>
                     <TextInput style={styles.inputTanggal} placeholder="Tanggal Kunjungan"/>
+                    {/* <Button onPress={showDatepicker} title="Show date picker!" /> */}
+                    <TouchableOpacity style={styles.btnMinus} onPress={showDatepicker}>
+                        <Image source={calendar} style={styles.Minus} />
+                    </TouchableOpacity>
                 </View>
+                {show && (
+                    <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={mode}
+                    is24Hour={true}
+                    display="default"
+                    onChange={onChange}
+                    />
+                )}
             </View>
         </View>
     )
