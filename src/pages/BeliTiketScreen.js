@@ -13,7 +13,6 @@ import ContentDesc from '../components/ContentDesc'
 const BeliTiketScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            
             <View style={styles.Top}>
                 <Image source={museum} style={styles.fotoMuseum} />
             </View>
@@ -85,8 +84,8 @@ const styles = StyleSheet.create({
         // width: 200,
         // borderColor:'B',
         // borderWidth: 1,
-        borderTopLeftRadius: 30,
-        borderBottomLeftRadius: 30,
+        // borderTopLeftRadius: 30,
+        // borderBottomLeftRadius: 30,
         justifyContent: "center",
         alignItems: "center",
         paddingHorizontal:20,

@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#A01F1F',
     }, 
+    
     container:{
         height: '100%',
         justifyContent: "center",
@@ -65,16 +66,17 @@ const styles = StyleSheet.create({
         marginHorizontal:20
     },
     image:{
-        width:160,
-        height:150,
-        marginBottom:30
+        width:130,
+        height:120,
+        marginBottom:30,
+        marginTop: 30,
     },
     input:{
         borderWidth:1,
         borderColor:'#DBD7D2',
         borderRadius:5,
         paddingLeft:20,
-        marginBottom:40, 
+        marginBottom:20, 
         borderRadius: 30,
     },
     button:{
