@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 30, 
         borderTopRightRadius: 30,
         // height: '60%',
-        // width: '100%',
+        width: '100%',
         position: 'relative',
     },
 
@@ -125,10 +125,11 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         // borderWidth: 1,
         // backgroundColor: 'green',
+        width: '85%',
         height: 80,
         justifyContent: "space-around",
+        alignSelf:"center",
         marginTop: 20,
-
     },
 
     btn:{
@@ -158,11 +159,12 @@ const styles = StyleSheet.create({
     },
 
     isiContent:{
+        // borderWidth: 1,
         // backgroundColor: 'green',
+        alignSelf: "center",
         height: '100%',
-        width: '85%',
+        width: '90%',
         alignItems: "center",
-        marginLeft: 30,
     },
 
     scroll:{

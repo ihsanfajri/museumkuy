@@ -135,10 +135,11 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         // borderWidth: 1,
         // backgroundColor: 'green',
+        width: '85%',
         height: 80,
         justifyContent: "space-around",
+        alignSelf:"center",
         marginTop: 20,
-
     },
 
     btn:{
@@ -168,7 +169,8 @@ const styles = StyleSheet.create({
     },
 
     isiContent:{
-        height: '100%',
+        // borderWidth:1,
+        height: '50%',
         width: '85%',
         justifyContent:'center',
         alignItems: "center",

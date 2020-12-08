@@ -10,7 +10,7 @@ const Galerifoto = () => {
     return (
         <View style={styles.container}>
             <View style={styles.top}>
-                <Image source={fotoMuseum1} style={{width:150,height:150}} />
+                <Image source={fotoMuseum1} style={{width:150,height:150,}} />
                 <Image source={fotoMuseum2} style={{width:150,height:150}} />
             </View>
             <View style={styles.bottom}>
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         flex:1,
         // backgroundColor:'red',
         flexDirection:'row',
-        justifyContent:'space-around',
-        marginBottom:20
+        justifyContent: "space-around",
+        marginBottom: 20,
     },
     bottom:{
         flex:1,

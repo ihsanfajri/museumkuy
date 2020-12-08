@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
       },
       map: {
         // ...StyleSheet.absoluteFillObject,
-        height: 200,
-        width: 300
+        height: '100%',
+        width: '100%',
     },
 })

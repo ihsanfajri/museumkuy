@@ -137,8 +137,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         // borderWidth: 1,
         // backgroundColor: 'green',
+        width: '85%',
         height: 80,
         justifyContent: "space-around",
+        alignSelf:"center",
         marginTop: 20,
 
     },

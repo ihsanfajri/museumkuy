@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     Rating:{
         flexDirection: "row",
         marginBottom: 10,
+        width:'95%',
     },
 
     containerUlasan:{
@@ -79,6 +80,10 @@ const styles = StyleSheet.create({
 
     nama:{
         fontSize: 12,
+    }, 
+    
+    Comment:{
+        width:'95%',
     }
 
 

@@ -61,24 +61,26 @@ const styles = StyleSheet.create({
 
     container:{
         flex: 1,
+        width: '100%',
     },
 
     containerBeriUlasan:{
         flex: 1,
+        width:'100%',
         // borderWidth: 1,
         // height: 230,
     },
 
     containerTitle1:{
         marginBottom: 10,
-        width:320,
+        width:'100%',
         alignSelf: "center",
         // borderWidth: 1,
     },
 
     formReview:{
         height: '85%',
-        width: 320,
+        width: '100%',
         // borderWidth: 1,
         marginBottom: 10,
     },
@@ -131,6 +133,7 @@ const styles = StyleSheet.create({
 
     containerAllUlasan:{
         flex: 1,
+        width: '100%',
         // borderWidth: 1,
         // backgroundColor: 'blue',
         marginTop: 10,
