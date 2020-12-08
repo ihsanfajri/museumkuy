@@ -41,7 +41,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
                         </View>
                         <Text style={styles.titleBtn}>Lokasi</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('ReviewMuseum') }>
                         <Text style={styles.Rating}>5.0</Text>
                         <View style={styles.containerStar}>
                             <Image source={star} style={styles.imgstar} />

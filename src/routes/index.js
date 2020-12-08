@@ -18,6 +18,7 @@ import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
 import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 import buyTiketScreen from '../pages/BeliTiketScreen'
 import UploadScreen from '../pages/TakePictureScreen'
+import ReviewMuseumScreen from '../pages/ReviewScreen'
 
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
@@ -182,6 +183,7 @@ const Router = () => {
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="GaleriMuseum" component={GaleriMuseumScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="ReviewMuseum" component={ReviewMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="MapMuseum" component={MapsMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="beliTiket" component={buyTiketScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="TransaksiSukses" component={TransaksiSuksesScreen} options={{ headerShown: false }}/>
