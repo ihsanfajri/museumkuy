@@ -40,18 +40,40 @@ const HomeScreen = ({navigation}) => {
                 <ScrollView>
                     <Text style={styles.fontMostPopuler}>The Most Populer Museum</Text>
                     <ScrollView horizontal>
-                        <MuseumPopuler />
-                        <MuseumPopuler />
-                        <MuseumPopuler />
+                        <TouchableOpacity>
+                            <MuseumPopuler />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <MuseumPopuler />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <MuseumPopuler />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <MuseumPopuler />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <MuseumPopuler />
+                        </TouchableOpacity>
                     </ScrollView>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20}}/>
                         <Text style={styles.fontCity}>The City of DKI Jakarta</Text>
                         <ScrollView horizontal>
-                            <City name="Jakarta Barat" />
-                            <City name="Jakarta Timur" />
-                            <City name="Jakarta Selatan" />
-                            <City name="Jakarta Utara" />
-                            <City name="Jakarta Pusat" />
+                            <TouchableOpacity>
+                                <City name="Jakarta Barat" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <City name="Jakarta Timur" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <City name="Jakarta Selatan" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <City name="Jakarta Utara" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <City name="Jakarta Pusat" />
+                            </TouchableOpacity>
                         </ScrollView>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10}}/>
                     <View>
@@ -75,7 +97,6 @@ const HomeScreen = ({navigation}) => {
                     <TouchableOpacity style={styles.buttonLihatSemua} onPress={() => navigation.navigate('AllMuseum')}>
                         <ButtonLihatSemua />
                     </TouchableOpacity>
-
                 </ScrollView>
             </Animatable.View>
         </View>

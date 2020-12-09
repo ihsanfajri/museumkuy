@@ -53,7 +53,7 @@ const ReviewScreen = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.pembatas}>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:20, width:'95%',}}/>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop: 10, width:'95%',}}/>
                 </View>
                 <ScrollView style={styles.scroll}>
                     <View style={styles.isiContent}>
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     },
 
     scroll:{
-        marginTop: 10,
+        marginTop: 20,
         marginBottom: 10,
     },
 

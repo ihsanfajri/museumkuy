@@ -55,7 +55,7 @@ const GaleriMuseumScreen = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.pembatas}>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20, width:'95%',}}/>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop: 10, width:'95%',}}/>
                 </View>
                 <ScrollView style={styles.scroll}>
                     <View style={styles.isiContent}>
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     },
 
     scroll:{
-        marginTop: 10,
+        marginTop: 20,
         marginBottom: 10,
     },
     imagegallery:{
@@ -194,12 +194,12 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         // borderColor:'#C4C4C4',
-        backgroundColor: 'white'
+        backgroundColor: 'grey'
     },
 
     btnbeli:{
         backgroundColor: '#A01F1F',
-        height: 60,
+        height: '100%',
         width: 100,
         // borderColor:'B',
         // borderWidth: 1,
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: 'white',
         height: 60,
-        width: '70%',
+        width: '75%',
         alignItems: "center",
     }
 })

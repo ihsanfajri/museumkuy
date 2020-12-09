@@ -26,7 +26,7 @@ const BeliTiketScreen = ({navigation}) => {
                 </View>
                 <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('TransaksiPending')}>
                     <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',alignItems:'center'}}>
-                        Beli Tiket
+                        Beli
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
 
     mid:{
-        flex: 2,
+        flex: 2.5,
         backgroundColor: 'white',
         borderTopLeftRadius: 30, 
         borderTopRightRadius: 30,
@@ -80,23 +80,21 @@ const styles = StyleSheet.create({
 
     btnbeli:{
         backgroundColor: '#A01F1F',
-        // height: 60,
-        // width: 200,
+        height: '100%',
+        width: 100,
         // borderColor:'B',
         // borderWidth: 1,
         // borderTopLeftRadius: 30,
         // borderBottomLeftRadius: 30,
         justifyContent: "center",
         alignItems: "center",
-        paddingHorizontal:20,
-        paddingVertical:30
     },
 
     containerTextbeli:{
         justifyContent: "center",
         backgroundColor: 'white',
         height: 60,
-        width: '70%',
+        width: '75%',
         alignItems: "center",
     }, 
 })
