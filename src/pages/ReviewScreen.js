@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image,ScrollView, TouchableOpacity } from 'react-native'
 
 import Review from '../components/Review'
 import TitleMuseum from '../components/TitleMuseum'
@@ -9,9 +9,11 @@ import description from '../assets/image/clipboard.png'
 import star from '../assets/image/star.png'
 import gallery from '../assets/image/gallery.png'
 import location from '../assets/image/placeholder.png'
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import StarRating from 'react-native-star-rating';
 
 const ReviewScreen = ({navigation}) => {
+    
+
     return (
         <View style={styles.container}>
             <Image source={museum} style={styles.fotoMuseum} />

@@ -4,55 +4,71 @@ import KomentarUser from '../components/komentarUser'
 
 import StarRating from 'react-native-star-rating';
 
-import Star from '../assets/image/star.png'
 
 
-const Review = () => {
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.containerBeriUlasan}>
-                <View style={styles.containerTitle1}>
-                    <Text style={{fontSize: 18, fontWeight: "bold",}}>Beri Ulasan</Text>
-                </View>
-                <View style={styles.formReview}>
-                    <View style={styles.RatingMuseum}>
-                        <Image source={Star} style={{height: 30, width:30}} />
-                        <Image source={Star} style={{height: 30, width:30}} />
-                        <Image source={Star} style={{height: 30, width:30}} />
-                        <Image source={Star} style={{height: 30, width:30}} />
-                        <Image source={Star} style={{height: 30, width:30}} />
+class Review extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          starCount: 3
+        };
+      }
+    
+      onStarRatingPress(rating) {
+        this.setState({
+          starCount: rating
+        });
+      }
+
+    render(){
+        return (
+            <View style={styles.container}>
+                <View style={styles.containerBeriUlasan}>
+                    <View style={styles.containerTitle1}>
+                        <Text style={{fontSize: 18, fontWeight: "bold",}}>Beri Ulasan</Text>
                     </View>
-                    <View style={styles.inputComent}>
-                        <View style={styles.containerFormComent}>
-                            <TextInput editable multiline maxLength={120} numberOfLines={3} placeholder="Beri Komentar" style={styles.kolomKomentar}/>
+                    <View style={styles.formReview}>
+                        <View style={styles.RatingMuseum}>
+                        <StarRating
+                                disabled={false}
+                                maxStars={5}
+                                fullStarColor="#FFC107"
+                                rating={this.state.starCount}
+                                selectedStar={(rating) => this.onStarRatingPress(rating)}
+                            />
                         </View>
-                        <View style={styles.containerBtnKirim}>
-                            <TouchableOpacity style={styles.btnKirim}>
-                                <Text>Kirim</Text>
-                            </TouchableOpacity>
+                        <View style={styles.inputComent}>
+                            <View style={styles.containerFormComent}>
+                                <TextInput editable multiline maxLength={120} numberOfLines={3} placeholder="Beri Komentar" style={styles.kolomKomentar}/>
+                            </View>
+                            <View style={styles.containerBtnKirim}>
+                                <TouchableOpacity style={styles.btnKirim}>
+                                    <Text>Kirim</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </View>
+                <View style={styles.containerAllUlasan}>
+                    <View style={styles.containerTitle2}>
+                        <Text style={{fontSize: 18, fontWeight: "bold",}}>Semua Ulasan</Text>
+                    </View>
+                    <View style={styles.pembatas}>
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10, width:'100%',}}/>
+                    </View>
+                    <View style={styles.ReviewAll}>
+                        <KomentarUser/>
+                        <KomentarUser/>
+                        <KomentarUser/>
+                        <KomentarUser/>
+                        <KomentarUser/>
+                    </View>
+                </View>
+                
             </View>
-            <View style={styles.containerAllUlasan}>
-                <View style={styles.containerTitle2}>
-                    <Text style={{fontSize: 18, fontWeight: "bold",}}>Semua Ulasan</Text>
-                </View>
-                <View style={styles.pembatas}>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10, width:'100%',}}/>
-                </View>
-                <View style={styles.ReviewAll}>
-                    <KomentarUser/>
-                    <KomentarUser/>
-                    <KomentarUser/>
-                    <KomentarUser/>
-                    <KomentarUser/>
-                </View>
-            </View>
-            
-        </View>
-    )
+        )
+    }
 }
 
 export default Review
