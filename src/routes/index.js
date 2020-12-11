@@ -60,7 +60,7 @@ const HistoryTransaksi = () => {
             fontSize: 10,
           },
           tabStyle: {
-            width: 90,
+            width: 100,
           },
           style:{
             borderTopLeftRadius:20,
