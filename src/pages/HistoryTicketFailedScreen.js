@@ -16,8 +16,8 @@ const HistoryTicketFailedScreen = ({navigation}) => {
             style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
             </Animatable.View> */}
-            <Animatable.View 
-            animation="fadeInUpBig"
+            <View 
+            
             style={styles.containerBottom}>
                 
                 
@@ -32,7 +32,7 @@ const HistoryTicketFailedScreen = ({navigation}) => {
                     </View>
                 </ScrollView>
                 
-            </Animatable.View>
+            </View>
         </View>
     )
 }

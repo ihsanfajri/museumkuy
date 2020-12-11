@@ -16,8 +16,8 @@ const HistoryTicketSuccessScreen = ({navigation}) => {
             style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
             </Animatable.View> */}
-            <Animatable.View 
-            animation="fadeInUpBig"
+            <View 
+            
             style={styles.containerBottom}>
                 <ScrollView style={{marginTop: 15,}}>
                     <View style={styles.bottomBottom}>
@@ -42,7 +42,7 @@ const HistoryTicketSuccessScreen = ({navigation}) => {
                     </View>
                 </ScrollView>
                 
-            </Animatable.View>
+            </View>
         </View>
     )
 }

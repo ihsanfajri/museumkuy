@@ -53,7 +53,9 @@ const IconBottom = (props) => {
 
 const HistoryTransaksi = () => {
   return(
-    <View style={styles.container}>
+    <View 
+    
+    style={styles.container}>
         <HeaderTransaksi/>
         <TabTop.Navigator swipeEnabled={true} tabBarOptions={{
           labelStyle: {
@@ -163,7 +165,7 @@ const Router = () => {
           }}/>
 
           <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} options={{
-            title: 'Update Profile',
+            title: 'Edit Profile',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },

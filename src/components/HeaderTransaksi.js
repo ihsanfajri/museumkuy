@@ -8,12 +8,11 @@ import * as Animatable from 'react-native-animatable'
 
 const HeaderTransaksi = () => {
     return (
-        <Animatable.View 
-            animation="fadeInDownBig"
+        <View 
             style={styles.containerTop}>
                 <Image style={{width: 242, height:171}} source={gambarTransaksi}/>
                 <Text style={styles.title}> History Transaksi </Text>
-        </Animatable.View> 
+        </View> 
     )
 }
 
