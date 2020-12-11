@@ -2,12 +2,14 @@ import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import * as Animatable from 'react-native-animatable'
-import Profile from '../assets/image/FotoProfil.png'
+import Profile from '../assets/image/user.png'
+
 import LogoSearch from '../assets/logo/loupe.png'
 import ButtonLihatSemua from '../components/ButtonLihatSemua'
 import City from '../components/City'
 import Museum from '../components/Museum'
 import MuseumPopuler from '../components/MuseumPopuler'
+import Searching from '../components/Searching'
 
 const HomeScreen = ({navigation}) => {
     return (
@@ -15,23 +17,20 @@ const HomeScreen = ({navigation}) => {
             <Animatable.View 
             animation="fadeInDownBig"
             style={styles.up}>
-                <View style={styles.userMessage}>
-                    <View style={styles.left}>
+                <View style={styles.up1}>
+                    <View style={styles.containerText}>
                         <Text style={styles.hi}>Hi, User</Text>
                         <Text style={styles.message}>Choose the</Text>
                         <Text style={styles.message}>Museum you want</Text>
                     </View>
-                    <View style={styles.right}>
-                        <Image source={Profile} style={{width:47,height:47}} />
+                    <View style={styles.containerImgProfile}>
+                        <View style={styles.bingkai}>
+                            <Image source={Profile} style={styles.img}/>
+                        </View>
                     </View>
                 </View>
-                <View style={styles.userSearch}>
-                    <View style={styles.searchInput}>
-                        <TextInput placeholder="search" style={styles.textInput}/>
-                    </View>
-                    <View style={styles.searchLogo}>
-                        <Image source={LogoSearch} style={{width:30,height:30,}} />
-                    </View>
+                <View style={styles.containerSearch}>
+                    <Searching /> 
                 </View>
             </Animatable.View>
             <Animatable.View
@@ -111,50 +110,32 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:'#A01F1F'
+        // backgroundColor: 'white',
     },
     up:{
         flex:1,
-        backgroundColor:'#A01F1F',
-    },
-    down:{
-        flex:2,
-        backgroundColor:'white',
-        borderTopRightRadius:20,
-        borderTopLeftRadius:20,
-        paddingTop:20,
-        paddingHorizontal:20,
-    },
-    userMessage:{
-        flex:1,
-        flexDirection:'row',
-        marginTop:20,
-        marginHorizontal:20
-    },
-    userSearch:{
-        flex:1,
-        // backgroundColor: 'grey',
-        marginHorizontal: 20,
-        flexDirection:'row'
-    },
-    searchInput:{
-      marginRight:10,  
+        // backgroundColor:'#A01F1F',
     },
 
-    searchLogo:{
-        marginVertical: 15,
+    up1:{
+        flex:1,
+        flexDirection: "row",
+        // borderWidth: 1,
+        width: '90%',
+        alignSelf: "center",
     },
 
-    left:{
-        flex:3,
-        justifyContent:'center'
+    containerText:{
+        marginHorizontal: 10,
+        marginVertical: 10,
+        flex: 3,
+        // borderWidth: 1,
+        marginLeft: 10,
+        width: '100%',
+        height: '100%',
+        justifyContent: "center",
     },
-    right:{
-        flex:1,
-        justifyContent:'center',
-        alignItems: 'center',
-        // backgroundColor: 'blue',
-        
-    },
+
     hi:{
         color:'white'
     },
@@ -162,16 +143,66 @@ const styles = StyleSheet.create({
         color:'white',
         fontSize:20
     },
-    textInput:{
-        marginTop:10,
-        borderWidth: 1,
-        backgroundColor:'white',
-        borderColor:'#DBD7D2',
-        borderRadius:20,
-        width:255,
-        height:40,
-        paddingLeft: 10
+
+
+    containerImgProfile:{
+        flex:1,
+        marginHorizontal: 10,
+        marginVertical: 10,
+        // borderWidth: 1,
+        width: '100%',
+        height: '100%',
+        justifyContent: "center",
+        alignItems: "center",
     },
+
+    bingkai:{
+        width:50,
+        height:50,
+        backgroundColor: 'white',
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 60/2,
+
+    },
+
+    img:{
+        width:40,
+        height:40,
+    },
+
+    containerSearch:{
+        flex: 0.6,
+        marginTop: 10,
+        marginBottom: 10,
+        width: '90%',
+        height: '100%',
+        // borderWidth: 1,
+        // backgroundColor: 'grey',
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center",
+    },
+
+   
+    down:{
+        flex:1.75,
+        backgroundColor:'white',
+        borderTopRightRadius:20,
+        borderTopLeftRadius:20,
+        paddingTop:20,
+        paddingHorizontal:20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+
     fontMostPopuler:{
         fontSize:14,
         color:'#A01F1F',
