@@ -40,56 +40,58 @@ const HomeScreen = ({navigation}) => {
                 <ScrollView>
                     <Text style={styles.fontMostPopuler}>The Most Populer Museum</Text>
                     <ScrollView horizontal>
-                        <TouchableOpacity > 
+                        <TouchableOpacity style={styles.btnMuseumPopuler}> 
                             <MuseumPopuler />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity style={styles.btnMuseumPopuler}>
                             <MuseumPopuler />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity style={styles.btnMuseumPopuler}>
                             <MuseumPopuler />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity style={styles.btnMuseumPopuler}>
                             <MuseumPopuler />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity style={styles.btnMuseumPopuler}>
                             <MuseumPopuler />
                         </TouchableOpacity>
                     </ScrollView>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20}}/>
                         <Text style={styles.fontCity}>The City of DKI Jakarta</Text>
                         <ScrollView horizontal>
-                            <TouchableOpacity>
+                            <TouchableOpacity style={styles.btncity}>
                                 <City name="Jakarta Barat" />
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity style={styles.btncity}>
                                 <City name="Jakarta Timur" />
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity style={styles.btncity}>
                                 <City name="Jakarta Selatan" />
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity style={styles.btncity}>
                                 <City name="Jakarta Utara" />
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity style={styles.btncity}>
                                 <City name="Jakarta Pusat" />
                             </TouchableOpacity>
                         </ScrollView>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10}}/>
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} >
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
+                            <View style={styles.containerShadow}>
+                                <Museum />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
                             <Museum />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
                             <Museum />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
                             <Museum />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
-                            <Museum />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
                             <Museum />
                         </TouchableOpacity>
                     </View>
@@ -174,26 +176,35 @@ const styles = StyleSheet.create({
         fontSize:14,
         color:'#A01F1F',
         marginBottom:10,
+        fontWeight: "bold"
     },
     fontCity:{
         marginVertical:20,
         fontSize:14,
-        color:'#A01F1F'
+        color:'#A01F1F',
+        fontWeight: "bold"
     },
     buttonLihatSemua:{
         justifyContent:'center',
         alignItems:'center',
         marginBottom: 20
     },
-    shadow:{
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
 
-        elevation: 4,
-            }
+    btnMuseum:{
+        // backgroundColor: 'blue',
+        // borderWidth: 1,
+        // width: '100%',
+    },
+    btnMuseumPopuler:{
+        // backgroundColor: 'blue',
+        // borderWidth: 1,
+        // width: '100%',
+    },
+    btncity:{
+        // backgroundColor: 'blue',
+        // borderWidth: 1,
+        // width: '100%',
+    },
+    
+
 })
