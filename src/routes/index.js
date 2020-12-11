@@ -60,12 +60,18 @@ const HistoryTransaksi = () => {
             fontSize: 10,
           },
           tabStyle: {
+
             width: 100,
+
+            justifyContent: "center",
+            alignItems: "center",
+
           },
           style:{
             borderTopLeftRadius:20,
             borderTopRightRadius:20,
-            marginTop:30
+            marginTop:30,
+            // borderWidth: 1,
 
           }
           
