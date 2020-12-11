@@ -25,12 +25,25 @@ export default Museum
 
 const styles = StyleSheet.create({
     container:{
-        marginTop:5,
-        borderWidth:1,
-        borderColor:'#DBD7D2',
+        marginTop:15,
+        marginHorizontal:5,
+        // borderWidth:1,
+        // borderColor:'#DBD7D2',
+        backgroundColor:'white',
         borderRadius: 30,
         flex:1,
-        flexDirection:'row'
+        flexDirection:'row',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+       
+
     },
     imageContainer:{
         flex:2,

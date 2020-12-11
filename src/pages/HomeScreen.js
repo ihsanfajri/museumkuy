@@ -40,7 +40,7 @@ const HomeScreen = ({navigation}) => {
                 <ScrollView>
                     <Text style={styles.fontMostPopuler}>The Most Populer Museum</Text>
                     <ScrollView horizontal>
-                        <TouchableOpacity>
+                        <TouchableOpacity > 
                             <MuseumPopuler />
                         </TouchableOpacity>
                         <TouchableOpacity>
@@ -77,7 +77,7 @@ const HomeScreen = ({navigation}) => {
                         </ScrollView>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10}}/>
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} >
                             <Museum />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
@@ -184,5 +184,16 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         marginBottom: 20
-    }
+    },
+    shadow:{
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+
+        elevation: 4,
+            }
 })

@@ -5,8 +5,6 @@ import KomentarUser from '../components/komentarUser'
 import StarRating from 'react-native-star-rating';
 
 
-
-
 class Review extends React.Component {
     constructor(props) {
         super(props);

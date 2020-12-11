@@ -8,7 +8,6 @@ const MuseumPopuler = () => {
         <View style={styles.container}>
             <View style={styles.up}>
                 <Image source={museum} style={styles.image} />
-
             </View>
             <View style={styles.down}>
                 <View style={styles.text}>
@@ -29,11 +28,23 @@ export default MuseumPopuler
 
 const styles = StyleSheet.create({
     container:{
-        borderWidth:1,
-        borderColor:'#DBD7D2',
+        // borderWidth:1,
+        backgroundColor:'white',
+        // borderColor:'#DBD7D2',
         borderRadius: 30,
         width: 270,
-        marginRight:20
+        marginHorizontal:10,
+        marginVertical:10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 10,
+        
     },
     up:{
         flex:1,
