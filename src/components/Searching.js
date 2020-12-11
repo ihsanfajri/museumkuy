@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 30,
         borderWidth: 1,
         borderColor: '#C4C4C4',
+        paddingHorizontal: 20,
     },
     
     containerBtn:{
