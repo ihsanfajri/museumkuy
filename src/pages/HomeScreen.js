@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, TextInput, KeyboardAvoidingView, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import * as Animatable from 'react-native-animatable'
 import Profile from '../assets/image/user.png'
@@ -12,8 +12,11 @@ import MuseumPopuler from '../components/MuseumPopuler'
 import Searching from '../components/Searching'
 
 const HomeScreen = ({navigation}) => {
+    const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0
     return (
-        <View style={styles.container}>
+        <ScrollView 
+         keyboardVerticalOffset={keyboardVerticalOffset}
+        style={styles.container}>
             <Animatable.View 
             animation="fadeInDownBig"
             style={styles.up}>
@@ -100,7 +103,7 @@ const HomeScreen = ({navigation}) => {
                     </TouchableOpacity>
                 </ScrollView>
             </Animatable.View>
-        </View>
+        </ScrollView>
     )
 }
 
