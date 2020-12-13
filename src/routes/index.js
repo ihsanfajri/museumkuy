@@ -172,7 +172,7 @@ const Router = () => {
           }}/>
 
           <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} options={{
-            title: 'Change Password',
+            title: ' ',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },
