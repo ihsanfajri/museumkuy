@@ -40,7 +40,9 @@ const ChangePasswordScreen = ({navigation}) => {
 export default ChangePasswordScreen
 
 const styles = StyleSheet.create({
-
+    containerScroll:{
+        backgroundColor:'white'
+    },
     containerContent:{
         alignSelf: 'center',
         width: '95%',
