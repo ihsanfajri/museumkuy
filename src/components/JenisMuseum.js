@@ -16,7 +16,7 @@ const JenisMuseum = ({image,jenis,color}) => {
         shadowRadius: 3.84,
 
         elevation: 5,
-        margin:10,
+        marginHorizontal:10,
         borderRadius:10
         }}>
             <View style={styles.content}>
@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
-        margin:10,
         borderRadius:10
     },
     content:{

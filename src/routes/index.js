@@ -19,7 +19,11 @@ import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 import buyTiketScreen from '../pages/BeliTiketScreen'
 import UploadScreen from '../pages/TakePictureScreen'
 import ReviewMuseumScreen from '../pages/ReviewScreen'
+
 import JelajahiKotaScreen from '../pages/JelajahiKotaScreen'
+
+import NotificationScreen from '../pages/NotificationScreen'
+
 
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
@@ -130,6 +134,7 @@ const Router = () => {
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
+        <Stack.Screen name="Notification" component={NotificationScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="AllMuseum" component={AllMuseumScreen} options={{ 
             // headerShown: false,
             title: 'Jakarta Barat',

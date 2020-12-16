@@ -49,6 +49,7 @@ const HomeScreen = ({navigation}) => {
                     <View style={styles.containerfont}>
                         <Text style={styles.fontJudul} >Jelajahi Kota</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('JelajahiKota')}>
+
                             <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                         </TouchableOpacity>
                     </View>
