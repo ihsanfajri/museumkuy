@@ -22,25 +22,30 @@ class HomeScreen extends React.Component {
             <ScrollView style={styles.container}>
                 <View style={styles.containerHeader}>
                     <View style={styles.inputContainer}>
-                        <TextInput placeholder="search" style={styles.textInput} />
+                        <View style={styles.inputSearch}>
+                            <TextInput placeholder="search" style={styles.textInput} />
+                        </View>
+                        <View style={styles.imageContainer}>
+                            <TouchableOpacity style={styles.btnSearch}>
+                                <Image source={searchLogo} style={styles.image} />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <TouchableOpacity style={styles.imageContainer}>
-                            <Image source={searchLogo} style={styles.image} />
-                    </TouchableOpacity>
-                    <View style={styles.filterContainer}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Filter')}>
-                            <Image source={notifikasiLogo} style={styles.imageFilter} />
+                    <View style={styles.notifContainer}>
+                        <TouchableOpacity onPress={() => navigation.navigate('')}>
+                            <Image source={notifikasiLogo} style={styles.imageNotifikasi} />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.userContainer}>
-                        <Image source={userLogo} style={styles.imageUser} />
+                        <View style={styles.bingkai}> 
+                            <Image source={userLogo} style={styles.imageUser} />
+                        </View>
                     </View>
                 </View>
                 <View style={styles.containerCarousel}>
                     <Text>ini carousel</Text>
                 </View>
                 <View style={styles.containerBottom}>
-                    
                     <View>
                         <View style={styles.containerfont}>
                             <Text style={styles.fontJudul} >Jelajahi Kota</Text>
@@ -48,14 +53,31 @@ class HomeScreen extends React.Component {
                                 <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20,marginHorizontal:5}}/>
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
                         <View style={styles.containerKota}>
-                            <Kota image={image1} name="Jakarta" />
-                            <Kota image={image2} name="Bandung" />
+                            <View style={styles.bingkaKota}>
+                                <TouchableOpacity style={styles.btnKota}>
+                                    <Kota image={image1} name="Jakarta" />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.bingkaKota}>
+                                <TouchableOpacity style={styles.btnKota}>
+                                    <Kota image={image2} name="Bandung" />
+                                </TouchableOpacity>
+                            </View>
                         </View>
                         <View style={styles.containerKota}>
-                            <Kota image={image3} name="surabaya" />
-                            <Kota image={image4} name="yogyakarta" />
+                            <View style={styles.bingkaKota}>
+                                <TouchableOpacity style={styles.btnKota}>
+                                    <Kota image={image3} name="surabaya" />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.bingkaKota}>
+                                <TouchableOpacity style={styles.btnKota}>
+                                    <Kota image={image4} name="yogyakarta" />   
+                                </TouchableOpacity>
+                            </View>
+                          
                         </View>
                     </View>
                     <View>
@@ -65,7 +87,7 @@ class HomeScreen extends React.Component {
                                 <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20,marginHorizontal:5}}/>
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10,marginHorizontal:15}}/>
                         <ScrollView style={styles.containerJenis} horizontal={true}>
                             <TouchableOpacity>
                                 <JenisMuseum image={arkeologi} jenis="Arkeologi" color="#C29726"  />
@@ -92,23 +114,33 @@ class HomeScreen extends React.Component {
                                 <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20,marginHorizontal:5}}/>
+                            <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
                         <View>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
+                            <View style={styles.bingkaiMuseum}>
+                                <TouchableOpacity>
+                                    <Museum />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.bingkaiMuseum}>
+                                <TouchableOpacity>
+                                    <Museum />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.bingkaiMuseum}>
+                                <TouchableOpacity>
+                                    <Museum />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.bingkaiMuseum}>
+                                <TouchableOpacity>
+                                    <Museum />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.bingkaiMuseum}>
+                                <TouchableOpacity>
+                                    <Museum />
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </View>
@@ -130,52 +162,83 @@ const styles = StyleSheet.create({
     },
     containerHeader:{
         backgroundColor:'white',
-        paddingHorizontal:20,
+        paddingHorizontal:10,
         paddingTop:10,
         flexDirection:'row'
     },
+
     inputContainer:{
-          flex:5,
+        flex:8,
+        // borderWidth:1,
+        flexDirection: 'row',
     },
+
+    inputSearch:{
+        flex: 1,
+        // borderWidth: 1,
+    },
+
     textInput:{
           borderWidth:1,
           borderColor:'#C4C4C4',
-          borderTopLeftRadius:20,
-          borderBottomLeftRadius:20,
+          height: 40,
     },
+
     imageContainer:{
-          flex:1,
-          paddingHorizontal:20,
-          justifyContent:'center',
-          alignItems:'center',
-          backgroundColor:'#A01F1F'
+        flex: 0.3,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
+
+    btnSearch:{
+        width: '100%',
+        height: 40,
+        // borderWidth: 1,
+        backgroundColor: '#A01F1F',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
     image:{
-          width:20,
-          height:20
+        width:25,
+        height:25
     },
-    filterContainer:{
-          marginLeft:20,
-          justifyContent:'center',
-          alignItems:'center'
+
+    notifContainer:{
+        flex: 1.5,
+        // borderWidth: 1,
+        marginLeft:5,
+        justifyContent:'center',
+        alignItems:'center'
     },
-    imageFilter:{
+
+    imageNotifikasi:{
           width:30,
           height:30
     },
+
     userContainer:{
-        flex:1,
-        marginLeft:20,
+        flex:1.5,
+        marginLeft:5,
+        // borderWidth:1,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+
+    bingkai:{
         backgroundColor:'white',
         borderWidth:1,
-        borderRadius:20/2,
+        width:40,
+        height:40,
+        borderRadius: 40/2,
         borderColor:'#DBD7D2',
         justifyContent:'center',
         alignItems:'center'
     },
+
     imageUser:{
-        width:20,
-        height:20,
+        width:30,
+        height:30,
     },
     containerCarousel:{
         padding:20,
@@ -193,7 +256,7 @@ const styles = StyleSheet.create({
         marginTop:20,
         flexDirection:'row',
         justifyContent:'space-between',
-        paddingHorizontal:10
+        paddingHorizontal:15,
     },
     fontJudul:{
         fontWeight:'bold'
@@ -201,13 +264,32 @@ const styles = StyleSheet.create({
     fontLihatSemua:{
         color:'#A01F1F'
     },
+
     containerKota:{
-        paddingHorizontal:20,
-        paddingVertical:10,
+        // borderWidth:1,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
         flexDirection:'row',
+        justifyContent: 'space-evenly',
     },
+
+    bingkaKota:{
+        width: '45%'
+    },
+
+    btnKota:{
+        width: '100%',
+        height: 75,
+    },
+
     containerJenis:{
         marginTop:10,
-        marginHorizontal:20,
+        marginHorizontal:15,
+    },
+
+    bingkaiMuseum:{
+        // borderWidth: 1,
+        width: '95%',
+        alignSelf: 'center',
     }
 })

@@ -6,7 +6,9 @@ const Kota = ({image,name}) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-                    <Image source={image} style={styles.image} />
+                <View  style={styles.image}>
+                    <Image source={image} style={styles.imageKota} />
+                </View>  
                 <View style={styles.fontContainer}>
                     <Text style={styles.font}>{name}</Text>
                 </View>
@@ -20,6 +22,7 @@ export default Kota
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        width:'100%',
         backgroundColor:'white',
         shadowColor: "#000",
         shadowOffset: {
@@ -36,18 +39,27 @@ const styles = StyleSheet.create({
     },
     imageContainer:{
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        justifyContent: 'space-around',
     },
     image:{
-        width:50,
-        height:70
+        flex:1.2, 
     },
+
+    imageKota:{
+        width: '100%',
+        height: '100%',
+    },
+
     font:{
         // marginLeft:40
     },
+
     fontContainer:{
+        // borderWidth: 1,
+        flex: 2,
         alignItems:'center',
         // backgroundColor:'red',
-        marginHorizontal:20
+        marginHorizontal:5,
     }
 })

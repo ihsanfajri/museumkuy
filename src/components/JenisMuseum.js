@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
     content:{
         paddingHorizontal:10,
-        paddingVertical:20
+        paddingVertical:10,
     },
     image:{
         width:100,
