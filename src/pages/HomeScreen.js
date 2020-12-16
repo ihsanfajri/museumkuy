@@ -16,138 +16,145 @@ import otomotif from '../assets/image/jenis/otomotif.jpg'
 import JenisMuseum from '../components/JenisMuseum'
 import Museum from '../components/Museum'
 
-class HomeScreen extends React.Component {
-    render(){
-        return (
-            <ScrollView style={styles.container}>
-                <View style={styles.containerHeader}>
-                    <View style={styles.inputContainer}>
-                        <View style={styles.inputSearch}>
-                            <TextInput placeholder="search" style={styles.textInput} />
-                        </View>
-                        <View style={styles.imageContainer}>
-                            <TouchableOpacity style={styles.btnSearch}>
-                                <Image source={searchLogo} style={styles.image} />
-                            </TouchableOpacity>
-                        </View>
+const HomeScreen = ({navigation}) => {
+    return (
+        <ScrollView style={styles.container}>
+            <View style={styles.containerHeader}>
+                <View style={styles.inputContainer}>
+                    <View style={styles.inputSearch}>
+                        <TextInput placeholder="search" style={styles.textInput} />
                     </View>
-                    <View style={styles.notifContainer}>
-                        <TouchableOpacity onPress={() => navigation.navigate('')}>
-                            <Image source={notifikasiLogo} style={styles.imageNotifikasi} />
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity style={styles.btnSearch}>
+                            <Image source={searchLogo} style={styles.image} />
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.userContainer}>
-                        <View style={styles.bingkai}> 
-                            <Image source={userLogo} style={styles.imageUser} />
-                        </View>
+                </View>
+                <View style={styles.notifContainer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
+                        <Image source={notifikasiLogo} style={styles.imageNotifikasi} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.userContainer}>
+                    <View style={styles.bingkai}> 
+                        <Image source={userLogo} style={styles.imageUser} />
                     </View>
                 </View>
-                <View style={styles.containerCarousel}>
-                    <Text>ini carousel</Text>
-                </View>
-                <View style={styles.containerBottom}>
-                    <View>
-                        <View style={styles.containerfont}>
-                            <Text style={styles.fontJudul} >Jelajahi Kota</Text>
-                            <TouchableOpacity>
-                                <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+            </View>
+            <View style={styles.containerCarousel}>
+                <Text>ini carousel</Text>
+            </View>
+            <View style={styles.containerBottom}>
+                <View>
+                    <View style={styles.containerfont}>
+                        <Text style={styles.fontJudul} >Jelajahi Kota</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
+                    <View style={styles.containerKota}>
+                        <View style={styles.bingkaKota}>
+                            <TouchableOpacity style={styles.btnKota}>
+                                <Kota image={image1} name="Jakarta" />
                             </TouchableOpacity>
                         </View>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
-                        <View style={styles.containerKota}>
-                            <View style={styles.bingkaKota}>
-                                <TouchableOpacity style={styles.btnKota}>
-                                    <Kota image={image1} name="Jakarta" />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.bingkaKota}>
-                                <TouchableOpacity style={styles.btnKota}>
-                                    <Kota image={image2} name="Bandung" />
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                        <View style={styles.containerKota}>
-                            <View style={styles.bingkaKota}>
-                                <TouchableOpacity style={styles.btnKota}>
-                                    <Kota image={image3} name="surabaya" />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.bingkaKota}>
-                                <TouchableOpacity style={styles.btnKota}>
-                                    <Kota image={image4} name="yogyakarta" />   
-                                </TouchableOpacity>
-                            </View>
-                          
+                        <View style={styles.bingkaKota}>
+                            <TouchableOpacity style={styles.btnKota}>
+                                <Kota image={image2} name="Bandung" />
+                            </TouchableOpacity>
                         </View>
                     </View>
-                    <View>
-                        <View style={styles.containerfont}>
-                            <Text style={styles.fontJudul} >Jenis Museum</Text>
-                            <TouchableOpacity>
-                                <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                    <View style={styles.containerKota}>
+                        <View style={styles.bingkaKota}>
+                            <TouchableOpacity style={styles.btnKota}>
+                                <Kota image={image3} name="surabaya" />
                             </TouchableOpacity>
                         </View>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10,marginHorizontal:15}}/>
-                        <ScrollView style={styles.containerJenis} horizontal={true}>
+                        <View style={styles.bingkaKota}>
+                            <TouchableOpacity style={styles.btnKota}>
+                                <Kota image={image4} name="yogyakarta" />   
+                            </TouchableOpacity>
+                        </View>
+                    
+                    </View>
+                </View>
+                <View>
+                    <View style={styles.containerfont}>
+                        <Text style={styles.fontJudul} >Jenis Museum</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10,marginHorizontal:15}}/>
+                    <ScrollView style={styles.containerJenis} horizontal={true}>
+                        <View style={styles.bingkaiJenis}>
                             <TouchableOpacity>
                                 <JenisMuseum image={arkeologi} jenis="Arkeologi" color="#C29726"  />
                             </TouchableOpacity>
+                        </View>
+                        <View>
                             <TouchableOpacity>
                                 <JenisMuseum image={seni} jenis="Seni" color="#CFC706" />
                             </TouchableOpacity>
+                        </View>
+                        <View>
                             <TouchableOpacity>
                                 <JenisMuseum image={maritim} jenis="Maritim" color="#0078BC" />
                             </TouchableOpacity>
+                        </View>
+                        <View>
                             <TouchableOpacity>
                                 <JenisMuseum image={sejarah} jenis="Sejarah" color="#308739" />
                             </TouchableOpacity>
+                        </View>
+                        <View>
                             <TouchableOpacity>
                                 <JenisMuseum image={otomotif} jenis="Otomotif" color="#873B30" />
                             </TouchableOpacity>
-                        </ScrollView> 
+                        </View>
+                    </ScrollView> 
+                </View>
+                    
+                <View style={{marginTop: 10,}}>
+                    <View style={styles.containerfont}>
+                        <Text style={styles.fontJudul} >Rekomendasi Museum</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                        </TouchableOpacity>
                     </View>
-                        
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
                     <View>
-                        <View style={styles.containerfont}>
-                            <Text style={styles.fontJudul} >Rekomendasi Museum</Text>
+                        <View style={styles.bingkaiMuseum}>
                             <TouchableOpacity>
-                                <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                                <Museum />
                             </TouchableOpacity>
                         </View>
-                            <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
-                        <View>
-                            <View style={styles.bingkaiMuseum}>
-                                <TouchableOpacity>
-                                    <Museum />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.bingkaiMuseum}>
-                                <TouchableOpacity>
-                                    <Museum />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.bingkaiMuseum}>
-                                <TouchableOpacity>
-                                    <Museum />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.bingkaiMuseum}>
-                                <TouchableOpacity>
-                                    <Museum />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.bingkaiMuseum}>
-                                <TouchableOpacity>
-                                    <Museum />
-                                </TouchableOpacity>
-                            </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
-            </ScrollView>
-        )
-    }
-    
+            </View>
+        </ScrollView>
+    )
 }
 
 export default HomeScreen
@@ -250,17 +257,28 @@ const styles = StyleSheet.create({
         backgroundColor:'white',
         borderTopLeftRadius:20,
         borderTopRightRadius:20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
 
+        elevation: 10,
     },
+
     containerfont:{
         marginTop:20,
         flexDirection:'row',
         justifyContent:'space-between',
         paddingHorizontal:15,
     },
+
     fontJudul:{
         fontWeight:'bold'
     },
+
     fontLihatSemua:{
         color:'#A01F1F'
     },
@@ -286,6 +304,10 @@ const styles = StyleSheet.create({
         marginTop:10,
         marginHorizontal:15,
     },
+
+    // bingkaiJenis:{
+    //     borderWidth: 1,
+    // },
 
     bingkaiMuseum:{
         // borderWidth: 1,

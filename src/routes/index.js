@@ -19,6 +19,7 @@ import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
 import buyTiketScreen from '../pages/BeliTiketScreen'
 import UploadScreen from '../pages/TakePictureScreen'
 import ReviewMuseumScreen from '../pages/ReviewScreen'
+import JelajahiKotaScreen from '../pages/JelajahiKotaScreen'
 
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
@@ -195,6 +196,16 @@ const Router = () => {
         <Stack.Screen name="beliTiket" component={buyTiketScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="TransaksiSukses" component={TransaksiSuksesScreen} options={{ headerShown: false }}/>
        
+        <Stack.Screen name="JelajahiKota" component={JelajahiKotaScreen} options={{
+            title: 'Jelajahi Kota',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
       
       </Stack.Navigator>
     )
