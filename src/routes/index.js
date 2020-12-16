@@ -88,7 +88,10 @@ const HistoryTransaksi = () => {
 
 const Dashboard = () => {
     return(
-      <Tab.Navigator >
+      <Tab.Navigator tabBarOptions={{
+        keyboardHidesTabBar: true,
+        
+      }}>
         <Tab.Screen 
           name="Home" 
           component={HomeScreen}

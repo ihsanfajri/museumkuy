@@ -1,110 +1,121 @@
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, TextInput, KeyboardAvoidingView, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import * as Animatable from 'react-native-animatable'
-import Profile from '../assets/image/user.png'
-
-import LogoSearch from '../assets/logo/loupe.png'
-import ButtonLihatSemua from '../components/ButtonLihatSemua'
-import City from '../components/City'
+import { StyleSheet, Text, View,TextInput,Image,TouchableOpacity, ScrollView } from 'react-native'
+import searchLogo from '../assets/logo/loupe.png'
+import notifikasiLogo from '../assets/image/notification.png'
+import userLogo from '../assets/image/user.png'
+import Kota from '../components/Kota'
+import image1 from '../assets/image/kota/jakarta.jpg'
+import image2 from '../assets/image/kota/bandung.jpg'
+import image3 from '../assets/image/kota/surabaya.jpg'
+import image4 from '../assets/image/kota/yogyakarta.jpg'
+import seni from '../assets/image/jenis/seni.jpg'
+import arkeologi from '../assets/image/jenis/arkeologi.jpg'
+import maritim from '../assets/image/jenis/maritim.jpg'
+import sejarah from '../assets/image/jenis/sejarah.jpg'
+import otomotif from '../assets/image/jenis/otomotif.jpg'
+import JenisMuseum from '../components/JenisMuseum'
 import Museum from '../components/Museum'
-import MuseumPopuler from '../components/MuseumPopuler'
-import Searching from '../components/Searching'
 
-const HomeScreen = ({navigation}) => {
-    const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0
-    return (
-        <ScrollView 
-         keyboardVerticalOffset={keyboardVerticalOffset}
-        style={styles.container}>
-            <Animatable.View 
-            animation="fadeInDownBig"
-            style={styles.up}>
-                <View style={styles.up1}>
-                    <View style={styles.containerText}>
-                        <Text style={styles.hi}>Hi, User</Text>
-                        <Text style={styles.message}>Choose the</Text>
-                        <Text style={styles.message}>Museum you want</Text>
+class HomeScreen extends React.Component {
+    render(){
+        return (
+            <ScrollView style={styles.container}>
+                <View style={styles.containerHeader}>
+                    <View style={styles.inputContainer}>
+                        <TextInput placeholder="search" style={styles.textInput} />
                     </View>
-                    <View style={styles.containerImgProfile}>
-                        <View style={styles.bingkai}>
-                            <Image source={Profile} style={styles.img}/>
+                    <TouchableOpacity style={styles.imageContainer}>
+                            <Image source={searchLogo} style={styles.image} />
+                    </TouchableOpacity>
+                    <View style={styles.filterContainer}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Filter')}>
+                            <Image source={notifikasiLogo} style={styles.imageFilter} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.userContainer}>
+                        <Image source={userLogo} style={styles.imageUser} />
+                    </View>
+                </View>
+                <View style={styles.containerCarousel}>
+                    <Text>ini carousel</Text>
+                </View>
+                <View style={styles.containerBottom}>
+                    
+                    <View>
+                        <View style={styles.containerfont}>
+                            <Text style={styles.fontJudul} >Jelajahi Kota</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20,marginHorizontal:5}}/>
+                        <View style={styles.containerKota}>
+                            <Kota image={image1} name="Jakarta" />
+                            <Kota image={image2} name="Bandung" />
+                        </View>
+                        <View style={styles.containerKota}>
+                            <Kota image={image3} name="surabaya" />
+                            <Kota image={image4} name="yogyakarta" />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={styles.containerfont}>
+                            <Text style={styles.fontJudul} >Jenis Museum</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20,marginHorizontal:5}}/>
+                        <ScrollView style={styles.containerJenis} horizontal={true}>
+                            <TouchableOpacity>
+                                <JenisMuseum image={arkeologi} jenis="Arkeologi" color="#C29726"  />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <JenisMuseum image={seni} jenis="Seni" color="#CFC706" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <JenisMuseum image={maritim} jenis="Maritim" color="#0078BC" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <JenisMuseum image={sejarah} jenis="Sejarah" color="#308739" />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <JenisMuseum image={otomotif} jenis="Otomotif" color="#873B30" />
+                            </TouchableOpacity>
+                        </ScrollView> 
+                    </View>
+                        
+                    <View>
+                        <View style={styles.containerfont}>
+                            <Text style={styles.fontJudul} >Rekomendasi Museum</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20,marginHorizontal:5}}/>
+                        <View>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Museum />
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
-                <View style={styles.containerSearch}>
-                    <Searching /> 
-                </View>
-            </Animatable.View>
-            <Animatable.View
-             animation="fadeInUpBig"
-             style={styles.down}>
-                <ScrollView>
-                    <Text style={styles.fontMostPopuler}>The Most Populer Museum</Text>
-                    <ScrollView horizontal>
-                        <TouchableOpacity style={styles.btnMuseumPopuler}> 
-                            <MuseumPopuler />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btnMuseumPopuler}>
-                            <MuseumPopuler />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btnMuseumPopuler}>
-                            <MuseumPopuler />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btnMuseumPopuler}>
-                            <MuseumPopuler />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btnMuseumPopuler}>
-                            <MuseumPopuler />
-                        </TouchableOpacity>
-                    </ScrollView>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:20}}/>
-                        <Text style={styles.fontCity}>The City of DKI Jakarta</Text>
-                        <ScrollView horizontal>
-                            <TouchableOpacity style={styles.btncity}>
-                                <City name="Jakarta Barat" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.btncity}>
-                                <City name="Jakarta Timur" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.btncity}>
-                                <City name="Jakarta Selatan" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.btncity}>
-                                <City name="Jakarta Utara" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.btncity}>
-                                <City name="Jakarta Pusat" />
-                            </TouchableOpacity>
-                        </ScrollView>
-                    <View style={{borderColor:'#C4C4C4', borderWidth:1, marginTop:10}}/>
-                    <View>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
-                            <View style={styles.containerShadow}>
-                                <Museum />
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
-                            <Museum />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
-                            <Museum />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
-                            <Museum />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} style={styles.btnMuseum}>
-                            <Museum />
-                        </TouchableOpacity>
-                    </View>
-
-                    <TouchableOpacity style={styles.buttonLihatSemua} onPress={() => navigation.navigate('AllMuseum')}>
-                        <ButtonLihatSemua />
-                    </TouchableOpacity>
-                </ScrollView>
-            </Animatable.View>
-        </ScrollView>
-    )
+            </ScrollView>
+        )
+    }
+    
 }
 
 export default HomeScreen
@@ -112,133 +123,91 @@ export default HomeScreen
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'#A01F1F'
-        // backgroundColor: 'white',
+        // backgroundColor:'white'
     },
-    up:{
-        flex:1,
-        // backgroundColor:'#A01F1F',
-    },
-
-    up1:{
-        flex:1,
-        flexDirection: "row",
-        // borderWidth: 1,
-        width: '90%',
-        alignSelf: "center",
-    },
-
-    containerText:{
-        marginHorizontal: 10,
-        marginVertical: 10,
-        flex: 3,
-        // borderWidth: 1,
-        marginLeft: 10,
-        width: '100%',
-        height: '100%',
-        justifyContent: "center",
-    },
-
-    hi:{
-        color:'white'
-    },
-    message:{
-        color:'white',
-        fontSize:20
-    },
-
-
-    containerImgProfile:{
-        flex:1,
-        marginHorizontal: 10,
-        marginVertical: 10,
-        // borderWidth: 1,
-        width: '100%',
-        height: '100%',
-        justifyContent: "center",
-        alignItems: "center",
-    },
-
-    bingkai:{
-        width:50,
-        height:50,
-        backgroundColor: 'white',
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 60/2,
-
-    },
-
-    img:{
-        width:40,
-        height:40,
-    },
-
-    containerSearch:{
-        flex: 0.6,
-        marginTop: 10,
-        marginBottom: 10,
-        width: '90%',
-        height: '100%',
-        // borderWidth: 1,
-        // backgroundColor: 'grey',
-        justifyContent: "center",
-        alignItems: "center",
-        alignSelf: "center",
-    },
-
-   
-    down:{
-        flex:1.75,
-        backgroundColor:'white',
-        borderTopRightRadius:20,
-        borderTopLeftRadius:20,
-        paddingTop:20,
+    header:{
         paddingHorizontal:20,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5,
     },
-
-    fontMostPopuler:{
-        fontSize:14,
-        color:'#A01F1F',
-        marginBottom:10,
-        fontWeight: "bold"
+    containerHeader:{
+        backgroundColor:'white',
+        paddingHorizontal:20,
+        paddingTop:10,
+        flexDirection:'row'
     },
-    fontCity:{
-        marginVertical:20,
-        fontSize:14,
-        color:'#A01F1F',
-        fontWeight: "bold"
+    inputContainer:{
+          flex:5,
     },
-    buttonLihatSemua:{
+    textInput:{
+          borderWidth:1,
+          borderColor:'#C4C4C4',
+          borderTopLeftRadius:20,
+          borderBottomLeftRadius:20,
+    },
+    imageContainer:{
+          flex:1,
+          paddingHorizontal:20,
+          justifyContent:'center',
+          alignItems:'center',
+          backgroundColor:'#A01F1F'
+    },
+    image:{
+          width:20,
+          height:20
+    },
+    filterContainer:{
+          marginLeft:20,
+          justifyContent:'center',
+          alignItems:'center'
+    },
+    imageFilter:{
+          width:30,
+          height:30
+    },
+    userContainer:{
+        flex:1,
+        marginLeft:20,
+        backgroundColor:'white',
+        borderWidth:1,
+        borderRadius:20/2,
+        borderColor:'#DBD7D2',
         justifyContent:'center',
-        alignItems:'center',
-        marginBottom: 20
+        alignItems:'center'
     },
+    imageUser:{
+        width:20,
+        height:20,
+    },
+    containerCarousel:{
+        padding:20,
+        backgroundColor:'white'
+    },
+    containerBottom:{
+        marginTop:20,
+        flex:1,
+        backgroundColor:'white',
+        borderTopLeftRadius:20,
+        borderTopRightRadius:20,
 
-    btnMuseum:{
-        // backgroundColor: 'blue',
-        // borderWidth: 1,
-        // width: '100%',
     },
-    btnMuseumPopuler:{
-        // backgroundColor: 'blue',
-        // borderWidth: 1,
-        // width: '100%',
+    containerfont:{
+        marginTop:20,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        paddingHorizontal:10
     },
-    btncity:{
-        // backgroundColor: 'blue',
-        // borderWidth: 1,
-        // width: '100%',
+    fontJudul:{
+        fontWeight:'bold'
     },
-    
-
+    fontLihatSemua:{
+        color:'#A01F1F'
+    },
+    containerKota:{
+        paddingHorizontal:20,
+        paddingVertical:10,
+        flexDirection:'row',
+    },
+    containerJenis:{
+        marginTop:10,
+        marginHorizontal:20,
+    }
 })
