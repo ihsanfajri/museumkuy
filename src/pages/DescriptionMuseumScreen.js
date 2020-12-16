@@ -64,7 +64,7 @@ const DescriptionMuseumScreen = ({navigation}) => {
             </View>
             <View style={styles.containerBtn}>
                 <View style={styles.containerTextbeli}>
-                    <Text style={{fontSize: 18,}}>Rp. 10.0000 / Tiket</Text>
+                    <Text style={{fontSize: 18,}}>Rp. 10.0000</Text>
                 </View>
                 <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('beliTiket')}>
                     <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',}}>

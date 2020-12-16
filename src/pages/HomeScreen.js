@@ -124,33 +124,33 @@ const HomeScreen = ({navigation}) => {
                             <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                         </TouchableOpacity>
                     </View>
-                        <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
+                    <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
                     <View>
-                    <View style={styles.bingkaiMuseum}>
-                        <TouchableOpacity>
-                            <Museum />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.bingkaiMuseum}>
-                        <TouchableOpacity>
-                            <Museum />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.bingkaiMuseum}>
-                        <TouchableOpacity>
-                            <Museum />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.bingkaiMuseum}>
-                        <TouchableOpacity>
-                            <Museum />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.bingkaiMuseum}>
-                        <TouchableOpacity>
-                            <Museum />
-                        </TouchableOpacity>
-                    </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.bingkaiMuseum}>
+                            <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
+                                <Museum />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
             </View>

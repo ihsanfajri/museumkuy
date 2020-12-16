@@ -20,6 +20,8 @@ export default KategoriMuseum
 const styles = StyleSheet.create({
     container:{
         // flex:1,
+        // borderWidth: 1,
+        height: 190,
         backgroundColor:'white',
         shadowColor: "#000",
         shadowOffset: {
@@ -33,20 +35,35 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
+
     imageContainer:{
-        padding:20,
+        // flex:1,
+        // borderWidth: 1,
+        width:'100%',
+        height: '60%',
+        paddingVertical: 5,
+        paddingHorizontal: 5,
         justifyContent:'center'
     },
     image:{
-        width:100,
-        height:80
+        width:'100%',
+        height: 100,
+        resizeMode: 'stretch',
     },
     font:{
         fontSize:14,
         fontWeight:'bold',
+        // borderWidth: 1,
+        width: 85,
+        textAlign: 'center',
     },
     fontContainer:{
-        paddingBottom:20,
-        paddingHorizontal:5
+        // flex: 1,
+        // borderWidth: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical:10,
+        marginBottom: 10,
+        marginTop: 10,
     }
 })

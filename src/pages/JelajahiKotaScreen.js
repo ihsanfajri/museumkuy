@@ -38,14 +38,14 @@ const getDataKota = () => {
         <View style={styles.container}>
             <View style={styles.up}>
                 <View style={styles.userSearch}>
-                        <View style={styles.searchInput}>
-                            <TextInput placeholder="search" style={styles.textInput}/>
-                        </View>
-                        <View style={styles.searchLogo}>
-                            <TouchableOpacity>
-                                <Image source={LogoSearch} style={{width:25,height:25,}} />
-                            </TouchableOpacity>
-                        </View>
+                    <View style={styles.searchInput}>
+                        <TextInput placeholder="search" style={styles.textInput}/>
+                    </View>
+                    <View style={styles.searchLogo}>
+                        <TouchableOpacity>
+                            <Image source={LogoSearch} style={{width:25,height:25,}} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
             <View style={styles.down}>

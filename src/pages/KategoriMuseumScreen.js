@@ -18,49 +18,72 @@ const KategoriMuseumScreen = () => {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.content}>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Arkeologi" image={arkeologi} />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Anak" image={anak} />
-                </TouchableOpacity>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Arkeologi" image={arkeologi} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Anak" image={anak} />
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.content}>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Biografi" image={biografi} />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Etnologi" image={etnologi} />
-                </TouchableOpacity>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Biografi" image={biografi} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Etnologi" image={etnologi} />
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.content}>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Geologi" image={geologi} />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Science" image={science} />
-                </TouchableOpacity>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Geologi" image={geologi} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Science" image={science} />
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.content}>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Maritim" image={maritim} />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Militer" image={militer} />
-                </TouchableOpacity>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Maritim" image={maritim} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Militer" image={militer} />
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.content}>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Otomotif" image={otomotif} />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Seni" image={seni} />
-                </TouchableOpacity>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Otomotif" image={otomotif} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bingkai}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Seni" image={seni} />
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.content}>
-                <TouchableOpacity>
-                    <KategoriMuseum name="Sejarah" image={sejarah} />
-                </TouchableOpacity>
+            <View style={styles.contentTerakhir}>
+                <View style={styles.bingkaiTerakhir}>
+                    <TouchableOpacity>
+                        <KategoriMuseum name="Sejarah" image={sejarah} />
+                    </TouchableOpacity>
+                </View>
+                
             </View>
         </ScrollView>
     )
@@ -75,10 +98,30 @@ const styles = StyleSheet.create({
     },
     content:{
         flex:1,
+        // borderWidth: 1,
         // backgroundColor:'yellow',
-        marginHorizontal:20,
-        marginVertical:20,
+        // marginHorizontal:20,
+        marginVertical:10,
         flexDirection:'row',
-        justifyContent:'space-around'
+        justifyContent:'space-evenly'
+    },
+
+    bingkai:{
+        // borderWidth: 1,
+        width: '40%',
+    },
+    contentTerakhir:{
+        flex:1,
+        // borderWidth: 1,
+        // backgroundColor:'yellow',
+        marginHorizontal: 25,
+        marginVertical:10,
+        flexDirection:'row',
+        
+    },
+
+    bingkaiTerakhir:{
+        // borderWidth: 1,
+        width: '47%',
     }
 })
