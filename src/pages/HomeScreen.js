@@ -126,31 +126,31 @@ const HomeScreen = ({navigation}) => {
                     </View>
                         <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
                     <View>
-                        <View style={styles.bingkaiMuseum}>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.bingkaiMuseum}>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.bingkaiMuseum}>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.bingkaiMuseum}>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.bingkaiMuseum}>
-                            <TouchableOpacity>
-                                <Museum />
-                            </TouchableOpacity>
-                        </View>
+                    <View style={styles.bingkaiMuseum}>
+                        <TouchableOpacity>
+                            <Museum />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.bingkaiMuseum}>
+                        <TouchableOpacity>
+                            <Museum />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.bingkaiMuseum}>
+                        <TouchableOpacity>
+                            <Museum />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.bingkaiMuseum}>
+                        <TouchableOpacity>
+                            <Museum />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.bingkaiMuseum}>
+                        <TouchableOpacity>
+                            <Museum />
+                        </TouchableOpacity>
+                    </View>
                     </View>
                 </View>
             </View>

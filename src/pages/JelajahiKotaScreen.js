@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         flex:1
     },
     up:{
-        flex:1,
+        flex:0.5,
         backgroundColor:'white',
     },
     down:{
