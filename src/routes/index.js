@@ -21,7 +21,7 @@ import UploadScreen from '../pages/TakePictureScreen'
 import ReviewMuseumScreen from '../pages/ReviewScreen'
 
 import JelajahiKotaScreen from '../pages/JelajahiKotaScreen'
-
+import KategoriMuseumScreen from '../pages/KategoriMuseumScreen'
 import NotificationScreen from '../pages/NotificationScreen'
 
 
@@ -203,6 +203,17 @@ const Router = () => {
        
         <Stack.Screen name="JelajahiKota" component={JelajahiKotaScreen} options={{
             title: 'Jelajahi Kota',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+        <Stack.Screen name="KategoriMuseum" component={KategoriMuseumScreen} options={{
+            title: 'Kategori Museum',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },

@@ -83,7 +83,7 @@ const HomeScreen = ({navigation}) => {
                 <View>
                     <View style={styles.containerfont}>
                         <Text style={styles.fontJudul} >Jenis Museum</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('KategoriMuseum')}>
                             <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                         </TouchableOpacity>
                     </View>
