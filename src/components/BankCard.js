@@ -10,7 +10,7 @@ const BankCard = ({image,name}) => {
                     <Image source={image} style={styles.image} />
                 </View>
                 <View style={styles.bankContainer}>
-                    <Text style={styles.font}>Bank {name}</Text>
+                    <Text style={styles.font}>{name}</Text>
                 </View>
                 <View style={styles.nextContainer}>
                     <Image source={next} style={styles.imageNext}  />

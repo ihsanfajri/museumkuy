@@ -6,7 +6,8 @@ import bni from '../assets/image/bank/bni.png'
 import bca from '../assets/image/bank/bca.png'
 import mandiri from '../assets/image/bank/mandiri.png'
 
-const MetodePembayaranScreen = () => {
+const MetodePembayaranScreen = ({navigation}) => {
+
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -20,16 +21,16 @@ const MetodePembayaranScreen = () => {
             <View style={styles.bottom}>
                 <Text style={styles.fontTransfer}>Transfer Bank</Text>
                 <TouchableOpacity style={styles.containerBtn}>
-                    <BankCard image={bri} name="BRI" />
+                    <BankCard image={bri} name="Bank BRI" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.containerBtn} onPress={ () => navigation.navigate('Bayar')}>
+                    <BankCard image={bni} name="Bank BNI" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.containerBtn}>
-                    <BankCard image={bni} name="BNI" />
+                    <BankCard image={bca} name="Bank BCA" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.containerBtn}>
-                    <BankCard image={bca} name="BCA" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.containerBtn}>
-                    <BankCard image={mandiri} name="Mandiri" />
+                    <BankCard image={mandiri} name="Bank Mandiri" />
                 </TouchableOpacity>
             </View>
         </View>
