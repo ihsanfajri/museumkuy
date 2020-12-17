@@ -24,7 +24,7 @@ const BeliTiketScreen = ({navigation}) => {
                     <Text style={{fontSize: 14, alignSelf: 'flex-start', marginTop: 10,}}>Total Harga :</Text>
                     <Text style={{fontSize: 25, marginBottom: 10,}}>Rp. 50.000</Text>
                 </View>
-                <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('TransaksiPending')}>
+                <TouchableOpacity style={styles.btnbeli} onPress={ () => navigation.navigate('MetodePembayaran')}>
                     <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold',alignItems:'center'}}>
                         Beli
                     </Text>

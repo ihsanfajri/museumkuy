@@ -30,16 +30,13 @@ import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
 import MapsMuseumScreen from '../pages/MapsMuseumScreen'
 
 import TransaksiSuksesScreen from '../pages/TransaksiSuksesScreen'
-
-
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MethodePembayaranScreen from '../pages/MetodePembayaranScreen'
 
 import iconHome from '../assets/image/home.png'
 import iconTransaksi from '../assets/image/transfer.png'
 import iconAccount from '../assets/image/user.png'
-import gambarTransaksi from '../assets/image/MenuTransaksi.png'
-import * as Animatable from 'react-native-animatable'
 import HeaderTransaksi from '../components/HeaderTransaksi';
+import MetodePembayaranScreen from '../pages/MetodePembayaranScreen';
 
 
 const Stack = createStackNavigator();
@@ -214,6 +211,17 @@ const Router = () => {
 
         <Stack.Screen name="KategoriMuseum" component={KategoriMuseumScreen} options={{
             title: 'Kategori Museum',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+        <Stack.Screen name="MetodePembayaran" component={MetodePembayaranScreen} options={{
+            title: 'Metode Pembayaran',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },

@@ -48,7 +48,7 @@ const FormPembelianTIket = () => {
                         <TouchableOpacity style={styles.btnMinus}>
                             <Image source={minus} style={styles.Minus} />
                         </TouchableOpacity>
-                        <TextInput style={styles.inputJumlah} />
+                        <TextInput style={styles.inputJumlah} value="5" />
                         <TouchableOpacity style={styles.btnMinus}>
                             <Image source={plus} style={styles.Minus} />
                         </TouchableOpacity>
