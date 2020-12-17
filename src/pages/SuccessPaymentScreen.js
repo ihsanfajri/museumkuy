@@ -23,19 +23,19 @@ const SuccessPaymentScreen = ({navigation}) => {
             </View>
             <View style={styles.containerBiodata}>
                 <Text style={styles.fontBiodata}>Biodata Pemesan</Text>
-                <View style={styles.detailBiodata}>
-                    <Text>Nama</Text>
-                    <Text>User</Text>
+                    <View style={styles.detailBiodata}>
+                        <Text>Nama</Text>
+                        <Text>User</Text>
+                    </View>
+                    <View style={styles.detailBiodata}>
+                        <Text>Email</Text>
+                        <Text>User@gmail.com</Text>
+                    </View>
+                    <View style={styles.detailBiodata}>
+                        <Text>Nomer Telp</Text>
+                        <Text>089756474829</Text>
+                    </View>
                 </View>
-                <View style={styles.detailBiodata}>
-                    <Text>Email</Text>
-                    <Text>User@gmail.com</Text>
-                </View>
-                <View style={styles.detailBiodata}>
-                    <Text>Nomer Telp</Text>
-                    <Text>089756474829</Text>
-                </View>
-            </View>
             <View style={styles.containerPesanan}>
                 <NomerPesanan />
             </View>
@@ -74,19 +74,22 @@ const styles = StyleSheet.create({
     },
 
     containerStatus:{
-        flex: 2,
+        flex: 1,
         // borderWidth:1,
         justifyContent: 'center',
         marginLeft:10
     },
 
     containerBerhasil:{
+        // borderWidth: 1,
         alignSelf: 'center',
         flex: 1,
         justifyContent:'center',
+        alignItems: 'flex-end',
+
         width: '100%',
         height: 50,
-        // marginHorizontal: 5,
+        marginHorizontal: 5,
         // marginVertical: 5,
     },
     fontStatus:{
@@ -117,7 +120,8 @@ const styles = StyleSheet.create({
     },
     containerBiodata:{
         flex:1,
-        padding:10,
+        paddingVertical: 20,
+        paddingHorizontal: 5,
         backgroundColor: 'white',
         marginBottom:10,
         shadowColor: "#000",
@@ -157,6 +161,8 @@ const styles = StyleSheet.create({
     containerPemesanan:{
         flex:1,
         backgroundColor:'white',
+        paddingVertical: 20,
+        paddingHorizontal: 5,
         marginBottom:10,
         shadowColor: "#000",
         shadowOffset: {
@@ -175,10 +181,19 @@ const styles = StyleSheet.create({
         paddingVertical:15,
         alignItems:'center',
         marginHorizontal:10,
-        borderRadius:30,
+        // borderRadius:30,
         borderWidth:1,
         borderColor:'#A01F1F',
         marginBottom:10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     fontKembali:{
         color:'#A01F1F',

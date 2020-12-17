@@ -55,28 +55,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#A01F1F',
     },
 
-    containerTop:{
-        flex: 1.5,
-        backgroundColor: 'white',
-        borderBottomRightRadius: 30,
-        borderBottomLeftRadius: 30,
-        justifyContent:"center",
-        alignItems:"center",
-    },
+    // containerTop:{
+    //     flex: 1.5,
+    //     backgroundColor: 'white',
+    //     borderBottomRightRadius: 30,
+    //     borderBottomLeftRadius: 30,
+    //     justifyContent:"center",
+    //     alignItems:"center",
+    // },
 
-    title:{
-        fontSize: 18,
-        fontWeight: '400',
-        marginTop: 15,
-    },
+    // title:{
+    //     fontSize: 18,
+    //     fontWeight: '400',
+    //     marginTop: 15,
+    // },
 
     containerBottom:{
         flex: 2,
         backgroundColor: 'white',
-        // borderTopLeftRadius: 30,
-        // borderTopRightRadius: 30,
-        // marginTop: 30,
-        alignItems:"center",
     },
 
     bottomTop:{
@@ -89,11 +85,14 @@ const styles = StyleSheet.create({
     }, 
 
     BtnTransaksi:{
+        flex:1,
         borderWidth: 1,
-        width:316,
-        height: 62,
-        borderRadius: 30,
-        marginTop: 7,
+        marginHorizontal: 10,
+        marginVertical: 2,
+        paddingVertical: 5,
+        paddingHorizontal: 5,
+        // paddingVertical: 10,
+        borderRadius: 10,
         borderColor: '#C4C4C4',
     }
 })
