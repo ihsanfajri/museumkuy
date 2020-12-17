@@ -19,19 +19,18 @@ const MetodePembayaranScreen = () => {
             </View>
             <View style={styles.bottom}>
                 <Text style={styles.fontTransfer}>Transfer Bank</Text>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.containerBtn}>
                     <BankCard image={bri} name="BRI" />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.containerBtn}>
                     <BankCard image={bni} name="BNI" />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.containerBtn}>
                     <BankCard image={bca} name="BCA" />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.containerBtn}>
                     <BankCard image={mandiri} name="Mandiri" />
                 </TouchableOpacity>
-               
             </View>
         </View>
     )
@@ -44,9 +43,10 @@ const styles = StyleSheet.create({
         flex:1
     },
     top:{
-        flex:1,
+        // borderWidth:1,
+        flex:0.35,
         backgroundColor:'white',
-        marginHorizontal:20,
+        marginHorizontal:10,
         flexDirection:'row',
         shadowColor: "#000",
         shadowOffset: {
@@ -59,13 +59,17 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     totalContainer:{
-        flex:3,
-        marginLeft:20
+        // borderWidth:1,
+        flex:2,
+        marginHorizontal: 10,
+        marginVertical: 5,
     },
     hargaContainer:{
+        // borderWidth:1,
         flex:1,
-        justifyContent:'flex-end',
-        marginBottom:20
+        justifyContent:'center',
+        alignItems: 'center'
+        // marginBottom:20
     },
     fontTotal:{
         fontWeight:'bold',
@@ -73,15 +77,22 @@ const styles = StyleSheet.create({
     },
 
     bottom:{
-        flex:9,
+        flex:3,
         // backgroundColor:'yellow',
         marginTop:30
     },
 
     fontTransfer:{
         fontWeight:'bold',
-        marginLeft:20,
+        marginHorizontal: 10,
         fontSize:18
+    },
+
+    containerBtn:{
+        // borderWidth:1 ,
+        width: '100%',
+        height: 65,
+        marginVertical:2,
     }
 
 })

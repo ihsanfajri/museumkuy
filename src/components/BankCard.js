@@ -24,8 +24,11 @@ export default BankCard
 
 const styles = StyleSheet.create({
     container:{
+        // borderWidth: 1,
         backgroundColor:'white',
-        marginTop:10,
+        // marginTop:10,
+        height: '100%',
+        width: '100%',
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
-        // flex:1,
+        flex:1,
     },
     content:{
         marginVertical:10,
@@ -44,23 +47,31 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     imageContainer:{
-        flex:2,
+        // borderWidth:1,
+        flex:1,
     },
     image:{
-        width:80,
-        height:50
+        // borderWidth:1,
+        width:'100%',
+        height:'100%',
+        resizeMode: 'contain'
     },
     bankContainer:{
-        flex:5,
-        justifyContent:'center'
+        // borderWidth: 1,
+        flex:4,
+        justifyContent:'center',
+        marginHorizontal: 10,
     },
     font:{
-        fontSize:16,
-        fontWeight:'bold'
+        fontSize:14,
+        fontWeight:'bold',
+        marginLeft: 10,
     },
     nextContainer:{
-        flex:1,
+        // borderWidth: 1,
+        flex:0.5,
         justifyContent:'center',
+        alignItems: 'flex-end',
     },
     imageNext:{
         width:20,
