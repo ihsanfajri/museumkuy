@@ -6,7 +6,7 @@ import bni from '../assets/image/bank/bni.png'
 import DetailPesanan from '../components/DetailPesanan'
 import DetailTotalHarga  from '../components/DetailTotalHarga'
 
-const BayarScreen = () => {
+const BayarScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <ScrollView style={styles.containerScroll}>
@@ -44,7 +44,7 @@ const BayarScreen = () => {
                 </View>
             </ScrollView>
             <View style={styles.containerBtn}>
-                <TouchableOpacity style={styles.btnBayar}>
+                <TouchableOpacity style={styles.btnBayar} onPress={() => navigation.navigate('PesananBerhasil') }>
                     <Text style={styles.textBtn}>Bayar</Text>
                 </TouchableOpacity>
             </View>

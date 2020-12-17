@@ -12,7 +12,6 @@ import RegisterScreen from '../pages/RegisterScreen'
 import LoginScreen from '../pages/LoginScreen'
 import AllMuseumScreen from '../pages/AllMuseumScreen'
 import UpdateProfileScreen from '../pages/ProfileUpdateScreen'
-import TransaksiPendingScreen from '../pages/TransaksiPendingScreen'
 import ChangePasswordScreen from '../pages/ChangePasswordScreen'
 import HistoryTicketSuccessScreen from '../pages/HistoryTicketSuccessScreen'
 import HistoryTicketFailedScreen from '../pages/HistoryTicketFailedScreen'
@@ -31,13 +30,13 @@ import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
 import MapsMuseumScreen from '../pages/MapsMuseumScreen'
 
 import TransaksiSuksesScreen from '../pages/TransaksiSuksesScreen'
-import MethodePembayaranScreen from '../pages/MetodePembayaranScreen'
 
 import iconHome from '../assets/image/home.png'
 import iconTransaksi from '../assets/image/transfer.png'
 import iconAccount from '../assets/image/user.png'
 import HeaderTransaksi from '../components/HeaderTransaksi';
 import MetodePembayaranScreen from '../pages/MetodePembayaranScreen';
+import PemesananBerhasilScreen from '../pages/PemesananBerhasilScreen';
 
 
 const Stack = createStackNavigator();
@@ -145,17 +144,6 @@ const Router = () => {
             },
           }}/>
 
-        <Stack.Screen name="TransaksiPending" component={TransaksiPendingScreen} options={{
-            title: 'Transaksi Pending',
-            headerStyle: {
-              backgroundColor: '#A01F1F',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}/>
-
         <Stack.Screen name="UploadPembayaran" component={UploadScreen} options={{
             title: 'Upload Bukti Pembayaran',
             headerStyle: {
@@ -188,8 +176,6 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
-
-
         <Stack.Screen name="HistorySuccess" component={HistoryTicketSuccessScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="HistoryFailed" component={HistoryTicketFailedScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="DescMuseum" component={DescriptionMuseumScreen} options={{ headerShown: false }}/>
@@ -198,7 +184,6 @@ const Router = () => {
         <Stack.Screen name="MapMuseum" component={MapsMuseumScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="beliTiket" component={buyTiketScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="TransaksiSukses" component={TransaksiSuksesScreen} options={{ headerShown: false }}/>
-       
         <Stack.Screen name="JelajahiKota" component={JelajahiKotaScreen} options={{
             title: 'Jelajahi Kota',
             headerStyle: {
@@ -209,7 +194,6 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
-
         <Stack.Screen name="KategoriMuseum" component={KategoriMuseumScreen} options={{
             title: 'Kategori Museum',
             headerStyle: {
@@ -220,8 +204,7 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
-
-        <Stack.Screen name="MetodePembayaran" component={MetodePembayaranScreen} options={{
+          <Stack.Screen name="MetodePembayaran" component={MetodePembayaranScreen} options={{
             title: 'Metode Pembayaran',
             headerStyle: {
               backgroundColor: '#A01F1F',
@@ -231,9 +214,18 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
-
           <Stack.Screen name="Bayar" component={BayarScreen} options={{
             title: 'Metode Pembayaran',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+          <Stack.Screen name="PesananBerhasil" component={PemesananBerhasilScreen} options={{
+            title: 'MuseumKuy',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },
