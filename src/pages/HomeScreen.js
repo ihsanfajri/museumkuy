@@ -41,9 +41,9 @@ const HomeScreen = ({navigation}) => {
                     </View>
                 </View>
             </View>
-            <View style={styles.containerCarousel}>
+            {/* <View style={styles.containerCarousel}>
                 <Text>ini carousel</Text>
-            </View>
+            </View> */}
             <View style={styles.containerBottom}>
                 <View>
                     <View style={styles.containerfont}>
