@@ -33,6 +33,9 @@ import MapsMuseumScreen from '../pages/MapsMuseumScreen'
 import TransaksiSuksesScreen from '../pages/TransaksiSuksesScreen'
 import MethodePembayaranScreen from '../pages/MetodePembayaranScreen'
 
+import SuccessPaymentScreen from '../pages/SuccessPaymentScreen'
+
+
 import iconHome from '../assets/image/home.png'
 import iconTransaksi from '../assets/image/transfer.png'
 import iconAccount from '../assets/image/user.png'
@@ -234,6 +237,17 @@ const Router = () => {
 
           <Stack.Screen name="Bayar" component={BayarScreen} options={{
             title: 'Metode Pembayaran',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+        <Stack.Screen name="TransaksiBerhasil" component={SuccessPaymentScreen} options={{
+            title: 'Museum Kuy',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },
