@@ -15,6 +15,8 @@ import sejarah from '../assets/image/jenis/sejarah.jpg'
 import otomotif from '../assets/image/jenis/otomotif.jpg'
 import JenisMuseum from '../components/JenisMuseum'
 import Museum from '../components/Museum'
+import museum from '../assets/image/musuem.jpg'
+
 
 const HomeScreen = ({navigation}) => {
     return (
@@ -56,7 +58,7 @@ const HomeScreen = ({navigation}) => {
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10, marginBottom:10, marginHorizontal:15}}/>
                     <View style={styles.containerKota}>
                         <View style={styles.bingkaKota}>
-                            <TouchableOpacity style={styles.btnKota}>
+                            <TouchableOpacity style={styles.btnKota} onPress={()=> navigation.navigate('AllKotaMuseum')}>
                                 <Kota image={image1} name="Jakarta" />
                             </TouchableOpacity>
                         </View>
@@ -90,27 +92,27 @@ const HomeScreen = ({navigation}) => {
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10,marginHorizontal:15}}/>
                     <ScrollView style={styles.containerJenis} horizontal={true}>
                         <View style={styles.bingkaiJenis}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('AllKategoriMuseum') } >
                                 <JenisMuseum image={arkeologi} jenis="Arkeologi" color="#C29726"  />
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('AllKategoriMuseum') }>
                                 <JenisMuseum image={seni} jenis="Seni" color="#CFC706" />
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('AllKategoriMuseum') }>
                                 <JenisMuseum image={maritim} jenis="Maritim" color="#0078BC" />
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('AllKategoriMuseum') }>
                                 <JenisMuseum image={sejarah} jenis="Sejarah" color="#308739" />
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('AllKategoriMuseum') }>
                                 <JenisMuseum image={otomotif} jenis="Otomotif" color="#873B30" />
                             </TouchableOpacity>
                         </View>
@@ -120,7 +122,7 @@ const HomeScreen = ({navigation}) => {
                 <View style={{marginTop: 10,}}>
                     <View style={styles.containerfont}>
                         <Text style={styles.fontJudul} >Rekomendasi Museum</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('AllMuseum') }>
                             <Text style={styles.fontLihatSemua} >Lihat Semua</Text>
                         </TouchableOpacity>
                     </View>
@@ -128,27 +130,27 @@ const HomeScreen = ({navigation}) => {
                     <View>
                         <View style={styles.bingkaiMuseum}>
                             <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
-                                <Museum />
+                                <Museum nama="Museum Fatahilah" kota="Jakarta Barat" image={museum} />
                             </TouchableOpacity>
                         </View>
                         <View style={styles.bingkaiMuseum}>
                             <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
-                                <Museum />
+                                <Museum nama="Museum Angkut" kota="Batu" image={otomotif} />
                             </TouchableOpacity>
                         </View>
                         <View style={styles.bingkaiMuseum}>
                             <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
-                                <Museum />
+                                <Museum nama="Museum Art 1" kota="Jakarta Pusat" image={seni} />
                             </TouchableOpacity>
                         </View>
                         <View style={styles.bingkaiMuseum}>
                             <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
-                                <Museum />
+                                <Museum nama="Museum Maritim" kota="Jakarta Utara" image={maritim}/>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.bingkaiMuseum}>
                             <TouchableOpacity onPress={ () => navigation.navigate('DescMuseum') }>
-                                <Museum />
+                                <Museum nama="Museum Trowulan" kota="Mojokerto" image={arkeologi} />
                             </TouchableOpacity>
                         </View>
                     </View>

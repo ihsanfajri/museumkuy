@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image} from 'react-native'
+import React,{useState,useEffect} from 'react'
+import { StyleSheet, Text, View, Image,AsyncStorage, ToastAndroid} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -25,6 +25,9 @@ import KategoriMuseumScreen from '../pages/KategoriMuseumScreen'
 import NotificationScreen from '../pages/NotificationScreen'
 
 
+import axios from 'axios';
+import { AuthContext } from '../components/Context'
+
 import GaleriMuseumScreen from '../pages/GaleriMuseumScreen'
 import DescriptionMuseumScreen from '../pages/DescriptionMuseumScreen'
 import MapsMuseumScreen from '../pages/MapsMuseumScreen'
@@ -32,6 +35,8 @@ import MapsMuseumScreen from '../pages/MapsMuseumScreen'
 import TransaksiSuksesScreen from '../pages/TransaksiSuksesScreen'
 
 import SuccessPaymentScreen from '../pages/SuccessPaymentScreen'
+
+
 
 
 import iconHome from '../assets/image/home.png'
@@ -127,17 +132,49 @@ const Dashboard = () => {
 }
 
 const Router = () => {
+
     return (
+    
     <Stack.Navigator initialRouteName="Splash">
-        <Stack.Screen name="Splash" component={SplahScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="First" component={FirstScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+      
+     
+      <Stack.Screen name="Splash" component={SplahScreen} options={{ headerShown: false }}/>
+
+      <Stack.Screen name="First" component={FirstScreen} options={{ headerShown: false }}/> 
+      <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+       
+      
+         
         <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
         <Stack.Screen name="Notification" component={NotificationScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="AllMuseum" component={AllMuseumScreen} options={{ 
             // headerShown: false,
-            title: 'Jakarta Barat',
+            title: 'Museum',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+
+        <Stack.Screen name="AllKategoriMuseum" component={AllMuseumScreen} options={{ 
+            // headerShown: false,
+            title: 'Arkeologi',
+            headerStyle: {
+              backgroundColor: '#A01F1F',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+        
+        <Stack.Screen name="AllKotaMuseum" component={AllMuseumScreen} options={{ 
+            // headerShown: false,
+            title: 'Jakarta',
             headerStyle: {
               backgroundColor: '#A01F1F',
             },
@@ -250,7 +287,7 @@ const Router = () => {
               fontWeight: 'bold',
             },
           }}/>
-      
+              
       </Stack.Navigator>
     )
 }

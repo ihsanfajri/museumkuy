@@ -1,10 +1,38 @@
 import React,{useState} from 'react'
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, Modal, TouchableHighlight, ScrollView } from 'react-native'
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert, Modal, TouchableHighlight, ScrollView} from 'react-native'
 import Museum from '../assets/logo/museumkuy01.png'
+import axios from 'axios'
 
 
 const RegisterScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalStatus, setModalStatus] = useState('Berhasil Mendaftar')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [nama, setNama] = useState('');
+
+    const postRegister = async () => {
+        console.log(email +" " +password+" "+nama+" ")
+        const data = {
+          nama,
+          email,
+          password,
+        }
+        axios.post('http://museumkuy-env.eba-by39j82m.ap-southeast-1.elasticbeanstalk.com/user/signup', data)
+        .then((response) => {
+          console.log('res: ',response.data)
+          setModalVisible(true)
+          if(response.data.status == "berhasil menambahkan user"){
+            navigation.navigate('Login')
+          }else{
+            setModalStatus(response.data.msg);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+
     return (
         <ScrollView style={styles.scroll}>
             <View style={styles.container}>
@@ -20,7 +48,7 @@ const RegisterScreen = ({navigation}) => {
                     >
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <Text style={styles.modalText}>Register Success</Text>
+                            <Text style={styles.modalText}>{modalStatus}</Text>
 
                             <TouchableHighlight
                                 style={{ ...styles.openButton, backgroundColor: "#A01F1F" }}
@@ -43,12 +71,12 @@ const RegisterScreen = ({navigation}) => {
                                 <Image source={Museum} style={styles.image} />
                             </View>
                             <View style={styles.down}>
-                                <TextInput placeholder="Full name" style={styles.input} />
-                                <TextInput placeholder="Email" style={styles.input}/>
-                                <TextInput placeholder="Password" style={styles.input}/>
-                                <TextInput placeholder="Confirm Password" style={styles.input}/>
+                                <TextInput placeholder="Full name" style={styles.input} value={nama} onChangeText={(value) => setNama(value)} />
+                                <TextInput placeholder="Email" style={styles.input} value={email} onChangeText={(value) => setEmail(value)} />
+                                <TextInput placeholder="Password" style={styles.input} secureTextEntry value={password} onChangeText={(value) => setPassword(value)}/>
+                                <TextInput placeholder="Confirm Password" style={styles.input} secureTextEntry/>
                                 
-                                <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
+                                <TouchableOpacity style={styles.button} onPress={() => postRegister()}>
                                     <Text style={styles.textButton}>SIGN UP</Text>
                                 </TouchableOpacity>
                             </View>

@@ -1,8 +1,34 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import React,{useState} from 'react'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, ToastAndroid } from 'react-native'
 import Museum from '../assets/logo/museumkuy01.png'
+import {AuthContext} from '../components/Context'
+import axios from 'axios'
+
 
 const LoginScreen = ({navigation}) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const postLogin = async () => {
+        console.log(email + " " + password)
+        const data = {
+          email,
+          password,
+        }
+        axios.post('http://museumkuy-env.eba-by39j82m.ap-southeast-1.elasticbeanstalk.com/user/signin', data)
+        .then((response) => {
+          console.log('res: ',response.data)
+          if(response.data.msg == "true"){
+            navigation.navigate('Dashboard')
+          }else{
+            ToastAndroid.show('Email atau Password Tidak sesuai',ToastAndroid.SHORT)
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+
     return (
         <ScrollView style={styles.scroll}>
             <View style={styles.container}>
@@ -12,11 +38,16 @@ const LoginScreen = ({navigation}) => {
                     </View>
                     <View style={styles.down}>
                     
-                        <TextInput placeholder="Email" style={styles.input}/>
-                        <TextInput placeholder="Password" style={styles.input}/>
+                        <TextInput placeholder="Email" style={styles.input} value={email}
+                        onChangeText={(value) => setEmail(value)}/>
+                        <TextInput placeholder="Password" style={styles.input}
+                        secureTextEntry={true}
+                        value={password}
+                        onChangeText={(value) => setPassword(value)}
+                        />
                         
                         
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Dashboard')}>
+                        <TouchableOpacity style={styles.button} onPress={()=> postLogin()} >
                             <Text style={styles.textButton}>SIGN IN</Text>
                         </TouchableOpacity>
 

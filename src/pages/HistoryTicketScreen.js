@@ -49,8 +49,8 @@ const HistoryTicketScreen = ({navigation}) => {
                         <TouchableOpacity style={styles.BtnTransaksi} onPress={() => navigation.navigate('PesananBerhasil')}>
                             <Transaksi status="Belum Lunas"/>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.BtnTransaksi} onPress={() => navigation.navigate('PesananBerhasil')}> 
-                            <Transaksi status="Belum Lunas"/>
+                        <TouchableOpacity style={styles.BtnTransaksi} onPress={() => navigation.navigate('TransaksiSukses')}> 
+                            <Transaksi status="Menunggu Verifikasi"/>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>

@@ -7,8 +7,10 @@ import editIcon from '../assets/logo/edit.png'
 import logoutIcon from '../assets/logo/logout.png'
 import passwordIcon from '../assets/logo/password.png'
 import * as Animatable from 'react-native-animatable'
+import { AuthContext } from '../components/Context';
 
 const AccountScreen = ({navigation}) => {
+    
     return (
         <Animatable.View animation="fadeIn" style={styles.container}>
             <ImageBackground source={fotoProfile} style={styles.imageBackground}>
@@ -46,9 +48,10 @@ const styles = StyleSheet.create({
         backgroundColor:'white'
     },
     imageBackground:{
-        flex:2,
-        width:450,
-        height:500
+        flex:3,
+        resizeMode:'stretch',
+        width:'100%',
+        height:500    
     },
     conten:{
         flex:1,

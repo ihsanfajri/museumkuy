@@ -1,17 +1,17 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import museum from '../assets/image/musuem.jpg'
+
 import rating from '../assets/logo/star.png'
 
-const Museum = () => {
+const Museum = ({image,nama,kota}) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-                <Image source={museum}  style={{width:106,height:69,borderRadius:20}} />
+                <Image source={image}  style={{width:106,height:69,borderRadius:20}} />
             </View>
             <View style={styles.fontContainer}>
-                <Text style={styles.fontMuseum}>Museum Fatahilah</Text>
-                <Text style={styles.fontKota}>Jakarta Barat</Text>
+                <Text style={styles.fontMuseum}>{nama}</Text>
+                <Text style={styles.fontKota}>{kota}</Text>
             </View>
             <View style={styles.ratingContainer}>
                 <Image source={rating} style={styles.ratingImage} />
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         // borderWidth:1,
         // borderColor:'#DBD7D2',
         backgroundColor:'white',
-        borderRadius: 30,
+        borderRadius: 10,
         flex:1,
         flexDirection:'row',
         shadowColor: "#000",
