@@ -14,12 +14,12 @@ import seni from '../assets/image/jenis/seni.jpg'
 
 import sejarah from '../assets/image/jenis/sejarah.jpg'
 
-const KategoriMuseumScreen = () => {
+const KategoriMuseumScreen = ({navigation}) => {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.content}>
                 <View style={styles.bingkai}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={ () => navigation.navigate('AllKategoriMuseum')} >
                         <KategoriMuseum name="Arkeologi" image={arkeologi} />
                     </TouchableOpacity>
                 </View>

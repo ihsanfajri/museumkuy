@@ -3,16 +3,16 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import museum from '../assets/image/musuem.jpg'
 import star from '../assets/logo/star.png'
 
-const MuseumPopuler = () => {
+const MuseumPopuler = ({image,nama,lokasi}) => {
     return (
         <View style={styles.container}>
             <View style={styles.up}>
-                <Image source={museum} style={styles.image} />
+                <Image source={image} style={styles.image} />
             </View>
             <View style={styles.down}>
                 <View style={styles.text}>
-                    <Text style={styles.fontMuseum}>Museum Fatahilah</Text>
-                    <Text style={styles.fontKota}>Jakarta Barat</Text>
+                    <Text style={styles.fontMuseum}>{nama}</Text>
+                    <Text style={styles.fontKota}>{lokasi}</Text>
                 </View>
                 <View style={styles.rating}>
                     <Image source={star} style={{width:15,height:16,}} />
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         // borderWidth:1,
         backgroundColor:'white',
         // borderColor:'#DBD7D2',
-        borderRadius: 30,
+        borderRadius: 10,
         width: 270,
         marginHorizontal:10,
         marginVertical:10,
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     image:{
-        width:243,
-        height:98,
-        borderRadius:30
+        width:250,
+        height:120,
+        borderRadius:10
     },
     text:{
         flex:3,

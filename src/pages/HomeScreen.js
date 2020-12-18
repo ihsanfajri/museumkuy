@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyleSheet, Text, View,TextInput,Image,TouchableOpacity, ScrollView } from 'react-native'
+import React,{useRef, useState, useEffect} from 'react'
+import { StyleSheet, Text, View,TextInput,Image,TouchableOpacity, ScrollView ,Dimensions} from 'react-native'
 import searchLogo from '../assets/logo/loupe.png'
 import notifikasiLogo from '../assets/image/notification.png'
 import userLogo from '../assets/image/user.png'
@@ -15,10 +15,15 @@ import sejarah from '../assets/image/jenis/sejarah.jpg'
 import otomotif from '../assets/image/jenis/otomotif.jpg'
 import JenisMuseum from '../components/JenisMuseum'
 import Museum from '../components/Museum'
+import MuseumPopuler from '../components/MuseumPopuler'
 import museum from '../assets/image/musuem.jpg'
+import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+
+const {width: screenWidth} = Dimensions.get('window');
 
 
 const HomeScreen = ({navigation}) => {
+    
     return (
         <ScrollView style={styles.container}>
             <View style={styles.containerHeader}>
@@ -43,9 +48,19 @@ const HomeScreen = ({navigation}) => {
                     </View>
                 </View>
             </View>
-            {/* <View style={styles.containerCarousel}>
-                <Text>ini carousel</Text>
-            </View> */}
+            <View style={styles.containerCarousel}>
+                <ScrollView horizontal>
+                    <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
+                        <MuseumPopuler nama="Museum Fathilah" lokasi="Jakarta Bara" image={sejarah} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} >
+                        <MuseumPopuler nama="Museum Angkut" lokasi="Batu" image={otomotif} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} >
+                        <MuseumPopuler nama="Museum Art 1" lokasi="Jakarta Pusat" image={seni} />
+                    </TouchableOpacity>
+                </ScrollView>
+            </View>
             <View style={styles.containerBottom}>
                 <View>
                     <View style={styles.containerfont}>
@@ -251,9 +266,26 @@ const styles = StyleSheet.create({
         height:30,
     },
     containerCarousel:{
+        flex:1,
         padding:20,
         backgroundColor:'white'
     },
+
+    item: {
+        width: screenWidth - 60,
+        height: screenWidth - 60,
+      },
+      CarouselmageContainer: {
+        flex: 1,
+        marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
+        backgroundColor: 'white',
+        borderRadius: 8,
+      },
+      Carouselmage: {
+        ...StyleSheet.absoluteFillObject,
+        resizeMode: 'cover',
+      },
+
     containerBottom:{
         marginTop:20,
         flex:1,

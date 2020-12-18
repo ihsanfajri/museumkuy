@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 
-const JelajahiKotaScreen = () => {
+const JelajahiKotaScreen = ({navigation}) => {
 const [data,setData] = useState([]);
 const [isLoading,setIsLoading] = useState(true);
 
@@ -42,7 +42,7 @@ const getDataKota = () => {
                         <TextInput placeholder="search" style={styles.textInput}/>
                     </View>
                     <View style={styles.searchLogo}>
-                        <TouchableOpacity>
+                        <TouchableOpacity >
                             <Image source={LogoSearch} style={{width:25,height:25,}} />
                         </TouchableOpacity>
                     </View>
@@ -52,7 +52,7 @@ const getDataKota = () => {
                 <FlatList
                     data={data}
                     renderItem={({item}) =>
-                    <TouchableOpacity> 
+                    <TouchableOpacity onPress={()=> navigation.navigate('AllKotaMuseum')}> 
                         <KotaDetail nama={item.nama} />
                     </TouchableOpacity>
                 }
