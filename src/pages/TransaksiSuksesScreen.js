@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     containerVerifikasi:{
         // borderWidth: 1,
         alignSelf: 'center',
-        flex: 1,
+        flex: 1.5,
         justifyContent:'center',
         alignItems: 'flex-end',
 
