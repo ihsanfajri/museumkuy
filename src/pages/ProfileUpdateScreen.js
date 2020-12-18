@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
 
-import FotoProfil from '../assets/image/mariavania.jpeg'
+import FotoProfil from '../assets/image/photo.jpg'
 import Camera from '../assets/logo/camera.png'
 
 const ProfileUpdateScreen = () => {
