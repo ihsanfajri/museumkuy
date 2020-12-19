@@ -21,8 +21,8 @@ export default HeaderTransaksi
 const styles = StyleSheet.create({
     containerTop:{
         backgroundColor: 'white',
-        borderBottomRightRadius: 30,
-        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 10,
+        borderBottomLeftRadius: 10,
         justifyContent:"center",
         alignItems:"center",
         paddingBottom:10

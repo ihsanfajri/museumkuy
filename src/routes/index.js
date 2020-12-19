@@ -76,9 +76,9 @@ const HistoryTransaksi = () => {
             alignItems: "center",
           },
           style:{
-            // borderTopLeftRadius:20,
-            // borderTopRightRadius:20,
-            marginTop:30,
+            borderTopLeftRadius:10,
+            borderTopRightRadius:10,
+            marginTop:10,
             // borderWidth: 1,
 
           }
