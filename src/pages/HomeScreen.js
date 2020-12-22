@@ -17,15 +17,17 @@ import JenisMuseum from '../components/JenisMuseum'
 import Museum from '../components/Museum'
 import MuseumPopuler from '../components/MuseumPopuler'
 import museum from '../assets/image/musuem.jpg'
-import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
 
-const {width: screenWidth} = Dimensions.get('window');
+const {width,height} = Dimensions.get('window');
+const CARD_WIDTH = width * 0.6;
+const CARD_JENIS = width * 0.2;
 
 
 const HomeScreen = ({navigation}) => {
     
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} scrollEventThrottle={1}
+        showsVerticalScrollIndicator={false}>
             <View style={styles.containerHeader}>
                 <View style={styles.inputContainer}>
                     <View style={styles.inputSearch}>
@@ -49,7 +51,12 @@ const HomeScreen = ({navigation}) => {
                 </View>
             </View>
             <View style={styles.containerCarousel}>
-                <ScrollView horizontal>
+                <ScrollView horizontal
+                scrollEventThrottle={1}
+                showsHorizontalScrollIndicator={false}
+                snapToInterval={CARD_WIDTH + 20}
+                snapToAlignment="center"
+                >
                     <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')}>
                         <MuseumPopuler nama="Museum Fathilah" lokasi="Jakarta Bara" image={sejarah} />
                     </TouchableOpacity>
@@ -105,7 +112,13 @@ const HomeScreen = ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                     <View style={{borderColor:'#C4C4C4', borderWidth:1,marginTop:10,marginHorizontal:15}}/>
-                    <ScrollView style={styles.containerJenis} horizontal={true}>
+                    <ScrollView style={styles.containerJenis} 
+                    horizontal={true} 
+                    scrollEventThrottle={1}
+                    showsHorizontalScrollIndicator={false}
+                    snapToInterval={CARD_JENIS + 20}
+                    snapToAlignment="center"
+                    >
                         <View style={styles.bingkaiJenis}>
                             <TouchableOpacity onPress={() => navigation.navigate('AllKategoriMuseum') } >
                                 <JenisMuseum image={arkeologi} jenis="Arkeologi" color="#C29726"  />
@@ -271,20 +284,6 @@ const styles = StyleSheet.create({
         backgroundColor:'white'
     },
 
-    item: {
-        width: screenWidth - 60,
-        height: screenWidth - 60,
-      },
-      CarouselmageContainer: {
-        flex: 1,
-        marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
-        backgroundColor: 'white',
-        borderRadius: 8,
-      },
-      Carouselmage: {
-        ...StyleSheet.absoluteFillObject,
-        resizeMode: 'cover',
-      },
 
     containerBottom:{
         marginTop:20,
