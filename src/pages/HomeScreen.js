@@ -17,6 +17,7 @@ import JenisMuseum from '../components/JenisMuseum'
 import Museum from '../components/Museum'
 import MuseumPopuler from '../components/MuseumPopuler'
 import museum from '../assets/image/musuem.jpg'
+import Animated from 'react-native-reanimated'
 
 const {width,height} = Dimensions.get('window');
 const CARD_WIDTH = width * 0.6;
@@ -51,8 +52,10 @@ const HomeScreen = ({navigation}) => {
                 </View>
             </View>
             <View style={styles.containerCarousel}>
-                <ScrollView horizontal
+                <Animated.ScrollView
+                horizontal
                 scrollEventThrottle={1}
+                pagingEnabled
                 showsHorizontalScrollIndicator={false}
                 snapToInterval={CARD_WIDTH + 20}
                 snapToAlignment="center"
@@ -66,7 +69,7 @@ const HomeScreen = ({navigation}) => {
                     <TouchableOpacity onPress={() => navigation.navigate('DescMuseum')} >
                         <MuseumPopuler nama="Museum Art 1" lokasi="Jakarta Pusat" image={seni} />
                     </TouchableOpacity>
-                </ScrollView>
+                </Animated.ScrollView>
             </View>
             <View style={styles.containerBottom}>
                 <View>
