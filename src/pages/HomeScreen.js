@@ -52,6 +52,7 @@ const HomeScreen = ({navigation}) => {
                 </View>
             </View>
             <View style={styles.containerCarousel}>
+                <Text style={{fontWeight:'bold'}}>Museum Populer</Text>
                 <Animated.ScrollView
                 horizontal
                 scrollEventThrottle={1}

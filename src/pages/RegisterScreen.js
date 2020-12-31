@@ -11,27 +11,27 @@ const RegisterScreen = ({navigation}) => {
     const [password, setPassword] = useState('');
     const [nama, setNama] = useState('');
 
-    const postRegister = async () => {
-        console.log(email +" " +password+" "+nama+" ")
-        const data = {
-          nama,
-          email,
-          password,
-        }
-        axios.post('http://museumkuy-env.eba-by39j82m.ap-southeast-1.elasticbeanstalk.com/user/signup', data)
-        .then((response) => {
-          console.log('res: ',response.data)
-          setModalVisible(true)
-          if(response.data.status == "berhasil menambahkan user"){
-            navigation.navigate('Login')
-          }else{
-            setModalStatus(response.data.msg);
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
+    // const postRegister = async () => {
+    //     console.log(email +" " +password+" "+nama+" ")
+    //     const data = {
+    //       nama,
+    //       email,
+    //       password,
+    //     }
+    //     axios.post('http://museumkuy-env.eba-by39j82m.ap-southeast-1.elasticbeanstalk.com/user/signup', data)
+    //     .then((response) => {
+    //       console.log('res: ',response.data)
+    //       setModalVisible(true)
+    //       if(response.data.status == "berhasil menambahkan user"){
+    //         navigation.navigate('Login')
+    //       }else{
+    //         setModalStatus(response.data.msg);
+    //       }
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    //   }
 
     return (
         <ScrollView style={styles.scroll}>
@@ -76,7 +76,7 @@ const RegisterScreen = ({navigation}) => {
                                 <TextInput placeholder="Password" style={styles.input} secureTextEntry value={password} onChangeText={(value) => setPassword(value)}/>
                                 <TextInput placeholder="Confirm Password" style={styles.input} secureTextEntry/>
                                 
-                                <TouchableOpacity style={styles.button} onPress={() => postRegister()}>
+                                <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
                                     <Text style={styles.textButton}>SIGN UP</Text>
                                 </TouchableOpacity>
                             </View>
